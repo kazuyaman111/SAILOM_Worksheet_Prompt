@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#146fdd">
+<title>SAILOM ใบงาน AI — Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="shell topin">
+    <div class="brand"><div class="mark">S</div><div><b>SAILOM ใบงาน AI</b><small>Prompt → Canva Worksheet Demo</small></div></div>
+    <span class="status">ทดลองสร้างได้ทันที</span>
+  </div>
+</header>
+
+<section class="hero shell">
+  <div>
+    <span class="pill">DEMO V2.2</span>
+    <h1>สร้าง Prompt ใบงาน<br><em>พร้อมเอาไปใช้กับ Canva AI</em></h1>
+    <p>เป้าหมายของเวอร์ชันนี้คือพิสูจน์ว่า “กดไม่กี่ครั้งแล้วได้ Prompt ที่สร้างใบงาน A4 หน้าเดียวได้จริง”</p>
+    <div class="hero-actions">
+      <button id="demoBtn" class="primary big">⚡ ทดลองด้วยข้อมูลตัวอย่าง</button>
+      <button id="clearBtn" class="secondary big">เริ่มกรอกเอง</button>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-card-title">FLOW</div>
+    <div class="flow">เลือกข้อมูล <span>→</span> Smart Engine <span>→</span> Prompt <span>→</span> Canva AI</div>
+    <div class="mini-score"><b id="qualityScore">0</b><span>/100</span></div>
+    <small>Prompt Quality Score</small>
+  </div>
+</section>
+
+<main class="shell">
+<section class="card">
+  <div class="section-head"><span>1</span><div><h2>ข้อมูลใบงาน</h2><p>ใช้ข้อมูลตัวอย่าง หรือกรอกข้อมูลของครูเอง</p></div></div>
+  <div class="grid two">
+    <label><b>ระดับชั้น</b><select id="grade"><option>ป.1</option><option>ป.2</option><option>ป.3</option><option selected>ป.4</option><option>ป.5</option><option>ป.6</option></select></label>
+    <label><b>วิชา</b><select id="subject"><option>ภาษาไทย</option><option>คณิตศาสตร์</option><option>วิทยาศาสตร์และเทคโนโลยี</option><option>สังคมศึกษา ศาสนาและวัฒนธรรม</option><option>ภาษาอังกฤษ</option><option>สุขศึกษาและพลศึกษา</option><option>ศิลปะ</option><option>การงานอาชีพ</option></select></label>
+  </div>
+  <label><b>เรื่อง / เนื้อหา</b><input id="topic" value="การอ่านจับใจความจากเรื่องสั้น" placeholder="เช่น ระบบสุริยะ / คำควบกล้ำ / เศษส่วน"></label>
+  <label><b>ตัวชี้วัด / ผลลัพธ์การเรียนรู้</b><textarea id="indicator" rows="3">ท 1.1 ป.4/3 อ่านเรื่องสั้น ๆ ตามเวลาที่กำหนดและตอบคำถามจากเรื่องที่อ่าน</textarea></label>
+  <div class="hint">💡 เวอร์ชันทดลองอนุญาตให้พิมพ์/วางตัวชี้วัดเอง เพื่อทดสอบคุณภาพ Prompt ก่อนฐานหลักสูตรเต็ม</div>
+</section>
+
+<section class="card">
+  <div class="section-head"><span>2</span><div><h2>รูปแบบใบงาน</h2><p>Smart Mode จะเลือกกิจกรรมจากคำกริยาในตัวชี้วัดให้</p></div></div>
+  <div class="toolbar">
+    <label class="switchline"><input type="checkbox" id="smart" checked><span></span><b>Smart Mode</b></label>
+    <label><b>เวลา</b><select id="duration"><option>15 นาที</option><option selected>20 นาที</option><option>30 นาที</option><option>40 นาที</option></select></label>
+    <label><b>ระดับ</b><select id="difficulty"><option>ง่าย</option><option selected>ปานกลาง</option><option>ท้าทาย</option></select></label>
+  </div>
+  <div id="analysisBox" class="analysis"></div>
+  <div class="activities" id="activities">
+    <label><input type="checkbox" value="จับคู่"><span>🔗</span><b>จับคู่</b></label>
+    <label><input type="checkbox" value="เติมคำ"><span>✍️</span><b>เติมคำ</b></label>
+    <label><input type="checkbox" value="เลือกตอบ"><span>✅</span><b>เลือกตอบ</b></label>
+    <label><input type="checkbox" value="จัดหมวดหมู่"><span>🧩</span><b>จัดหมวดหมู่</b></label>
+    <label><input type="checkbox" value="วิเคราะห์ภาพ"><span>🖼️</span><b>วิเคราะห์ภาพ</b></label>
+    <label><input type="checkbox" value="ตอบคำถามสั้น"><span>💬</span><b>ตอบสั้น</b></label>
+    <label><input type="checkbox" value="เรียงลำดับ"><span>🔢</span><b>เรียงลำดับ</b></label>
+    <label><input type="checkbox" value="สถานการณ์"><span>💡</span><b>สถานการณ์</b></label>
+  </div>
+  <div class="grid three topgap">
+    <label><b>จำนวนกิจกรรม</b><select id="activityCount"><option>1</option><option selected>2</option><option>3</option></select></label>
+    <label><b>จำนวนข้อ</b><select id="questionCount"><option>5</option><option selected>8</option><option>10</option></select></label>
+    <label><b>กระดาษ</b><select id="orientation"><option>A4 แนวตั้ง</option><option>A4 แนวนอน</option></select></label>
+  </div>
+</section>
+
+<section class="card">
+  <div class="section-head"><span>3</span><div><h2>ดีไซน์</h2><p>เลือกรูปแบบที่ต้องการให้ Canva AI สร้าง</p></div></div>
+  <div class="styles">
+    <label><input type="radio" name="style" value="Cute Kids" checked><div>🌈</div><b>Cute Kids</b></label>
+    <label><input type="radio" name="style" value="Modern Education"><div>📘</div><b>Modern</b></label>
+    <label><input type="radio" name="style" value="Thai Cute"><div>🐘</div><b>Thai Cute</b></label>
+    <label><input type="radio" name="style" value="AI Future"><div>🤖</div><b>AI Future</b></label>
+    <label><input type="radio" name="style" value="Nature Learning"><div>🌿</div><b>Nature</b></label>
+    <label><input type="radio" name="style" value="Minimal Colorful"><div>✨</div><b>Minimal</b></label>
+  </div>
+  <div class="grid two topgap">
+    <label><b>โทนสี</b><select id="color"><option selected>พาสเทลสดใส</option><option>ฟ้า–น้ำเงิน–ขาว</option><option>เขียว–ครีม</option><option>ชมพู–ม่วง</option><option>ขาวดำ ประหยัดหมึก</option></select></label>
+    <label><b>ความหนาแน่น</b><select id="density"><option>โปร่ง อ่านง่าย</option><option selected>สมดุล</option><option>เนื้อหาแน่นแต่ยังอ่านง่าย</option></select></label>
+  </div>
+  <div class="checks">
+    <label><input id="nameField" type="checkbox" checked> ชื่อ–ชั้น–เลขที่</label>
+    <label><input id="scoreField" type="checkbox" checked> ช่องคะแนน</label>
+    <label><input id="instructionField" type="checkbox" checked> คำชี้แจง</label>
+    <label><input id="onePage" type="checkbox" checked> บังคับ A4 หน้าเดียว</label>
+    <label><input id="answerKey" type="checkbox"> เฉลย</label>
+  </div>
+</section>
+
+<section class="card result-card">
+  <div class="section-head"><span>4</span><div><h2>Prompt พร้อมใช้</h2><p>กดสร้าง แล้วคัดลอกไปวางใน Canva AI</p></div></div>
+  <div class="platforms">
+    <button class="platform active" data-platform="canva">🎨 Canva AI</button>
+    <button class="platform" data-platform="chatgpt">✦ ChatGPT</button>
+    <button class="platform" data-platform="gemini">◆ Gemini</button>
+  </div>
+  <div class="buttons">
+    <button id="generateBtn" class="primary big">✨ สร้าง Prompt พร้อมใช้</button>
+    <button id="altBtn" class="secondary big">🎲 สร้างอีกแบบ</button>
+  </div>
+
+  <div class="quality-panel">
+    <div><b>ตรวจ Prompt ก่อนใช้งาน</b><span id="qualityText">ยังไม่ได้สร้าง</span></div>
+    <ul id="qualityList"></ul>
+  </div>
+
+  <textarea id="output" rows="28" spellcheck="false"></textarea>
+  <div class="buttons smallbtns">
+    <button id="copyBtn" class="secondary">📋 คัดลอก Prompt</button>
+    <button id="downloadBtn" class="secondary">⬇️ ดาวน์โหลด TXT</button>
+  </div>
+</section>
+
+<section class="card">
+  <div class="section-head"><span>5</span><div><h2>ตัวอย่าง Blueprint</h2><p>ดูว่าระบบวางโครงใบงาน A4 ประมาณไหนก่อนส่งไป Canva</p></div></div>
+  <div id="paper" class="paper"></div>
+</section>
+
+<section class="card test-guide">
+  <h2>🧪 วิธีทดสอบกับ Canva AI</h2>
+  <ol>
+    <li>กด <b>“ทดลองด้วยข้อมูลตัวอย่าง”</b></li>
+    <li>กด <b>“สร้าง Prompt พร้อมใช้”</b></li>
+    <li>กด <b>“คัดลอก Prompt”</b></li>
+    <li>เปิด Canva AI / Magic Design / Canva Chat แล้ววาง Prompt</li>
+    <li>ดูว่าได้ใบงาน A4 หน้าเดียวที่มีโจทย์ พื้นที่ตอบ และดีไซน์ตามที่สั่งหรือไม่</li>
+  </ol>
+  <div class="test-note">ถ้า Canva สร้างออกมาไม่ตรง เราจะปรับ “Prompt Engine” ก่อนเติมฐานหลักสูตรเต็ม เพราะนี่คือหัวใจของระบบครับ</div>
+</section>
+</main>
+
+<div id="toast" class="toast">คัดลอกแล้ว</div>
+<footer><div class="shell footer"><div><b>SAILOM ใบงาน AI</b><small>#ห้องเรียนครูชัช</small></div><span>Demo V2.2 • GitHub Pages Ready</span></div></footer>
+<script src="script.js"></script>
+</body>
+</html>

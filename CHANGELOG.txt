@@ -1,0 +1,33 @@
+SAILOM Worksheet AI V2.0
+
+NEW
+- Cascading curriculum selector
+- External JSON curriculum database
+- Smart behavior-verb analysis
+- Worksheet Fit Score
+- Favorites + History
+- Custom indicators
+- Improved A4 blueprint
+- Better mobile UI
+- Print blueprint
+- Canva / ChatGPT / Gemini prompt modes
+
+
+V2.1
+- Full 8-subject curriculum framework
+- 31 strands / 55 standards
+- Official source metadata
+- Curriculum Coverage Audit
+- Indicator search
+- JSON import/export
+- Verification metadata on curated indicator records
+- No hallucinated official indicator text
+
+
+V2.1.1
+- Registered all 330 standard×grade slots
+- Added official primary indicator totals (1,061)
+- Added per-subject/per-grade expected counts
+- Added real completion percentage dashboard
+- Added curriculum_coverage_v2.1.1.json
+- Prevents false '100% complete' claims when a slot contains multiple indicators
