@@ -1,0 +1,4838 @@
+{
+  "meta": {
+    "version": "2.1.1",
+    "description": "Official-count aware curriculum coverage registry for Primary 1-6",
+    "importantNote": "330 = standard×grade slots. Official primary indicator statements across 8 subject groups total 1,061 according to subject summary tables."
+  },
+  "summary": {
+    "version": "2.1.1",
+    "slotCount": 330,
+    "officialPrimaryIndicatorCount": 1061,
+    "populatedIndicatorCount": 78,
+    "pendingIndicatorCount": 983
+  },
+  "officialCounts": {
+    "thai": {
+      "name": "ภาษาไทย",
+      "byGrade": {
+        "ป.1": 22,
+        "ป.2": 27,
+        "ป.3": 31,
+        "ป.4": 33,
+        "ป.5": 33,
+        "ป.6": 34
+      },
+      "totalPrimary": 180
+    },
+    "math": {
+      "name": "คณิตศาสตร์",
+      "byGrade": {
+        "ป.1": 10,
+        "ป.2": 16,
+        "ป.3": 28,
+        "ป.4": 22,
+        "ป.5": 19,
+        "ป.6": 21
+      },
+      "totalPrimary": 116
+    },
+    "science": {
+      "name": "วิทยาศาสตร์และเทคโนโลยี",
+      "byGrade": {
+        "ป.1": 15,
+        "ป.2": 16,
+        "ป.3": 25,
+        "ป.4": 21,
+        "ป.5": 32,
+        "ป.6": 30
+      },
+      "totalPrimary": 139
+    },
+    "social": {
+      "name": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "byGrade": {
+        "ป.1": 31,
+        "ป.2": 34,
+        "ป.3": 39,
+        "ป.4": 38,
+        "ป.5": 36,
+        "ป.6": 39
+      },
+      "totalPrimary": 217
+    },
+    "health": {
+      "name": "สุขศึกษาและพลศึกษา",
+      "byGrade": {
+        "ป.1": 15,
+        "ป.2": 21,
+        "ป.3": 18,
+        "ป.4": 19,
+        "ป.5": 25,
+        "ป.6": 22
+      },
+      "totalPrimary": 120
+    },
+    "art": {
+      "name": "ศิลปะ",
+      "byGrade": {
+        "ป.1": 18,
+        "ป.2": 25,
+        "ป.3": 29,
+        "ป.4": 29,
+        "ป.5": 26,
+        "ป.6": 27
+      },
+      "totalPrimary": 154
+    },
+    "career": {
+      "name": "การงานอาชีพ",
+      "byGrade": {
+        "ป.1": 3,
+        "ป.2": 3,
+        "ป.3": 3,
+        "ป.4": 5,
+        "ป.5": 6,
+        "ป.6": 5
+      },
+      "totalPrimary": 25
+    },
+    "english": {
+      "name": "ภาษาอังกฤษ",
+      "byGrade": {
+        "ป.1": 16,
+        "ป.2": 16,
+        "ป.3": 18,
+        "ป.4": 20,
+        "ป.5": 20,
+        "ป.6": 20
+      },
+      "totalPrimary": 110
+    }
+  },
+  "populatedCounts": {
+    "thai": {
+      "subject": "ภาษาไทย",
+      "total": 12,
+      "byGrade": {
+        "ป.1": 2,
+        "ป.2": 2,
+        "ป.3": 2,
+        "ป.4": 2,
+        "ป.5": 2,
+        "ป.6": 2
+      }
+    },
+    "math": {
+      "subject": "คณิตศาสตร์",
+      "total": 12,
+      "byGrade": {
+        "ป.1": 2,
+        "ป.2": 2,
+        "ป.3": 2,
+        "ป.4": 2,
+        "ป.5": 2,
+        "ป.6": 2
+      }
+    },
+    "science": {
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "total": 18,
+      "byGrade": {
+        "ป.1": 3,
+        "ป.2": 3,
+        "ป.3": 3,
+        "ป.4": 3,
+        "ป.5": 3,
+        "ป.6": 3
+      }
+    },
+    "social": {
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "total": 12,
+      "byGrade": {
+        "ป.1": 2,
+        "ป.2": 2,
+        "ป.3": 2,
+        "ป.4": 2,
+        "ป.5": 2,
+        "ป.6": 2
+      }
+    },
+    "health": {
+      "subject": "สุขศึกษาและพลศึกษา",
+      "total": 6,
+      "byGrade": {
+        "ป.1": 1,
+        "ป.2": 1,
+        "ป.3": 1,
+        "ป.4": 1,
+        "ป.5": 1,
+        "ป.6": 1
+      }
+    },
+    "art": {
+      "subject": "ศิลปะ",
+      "total": 6,
+      "byGrade": {
+        "ป.1": 1,
+        "ป.2": 1,
+        "ป.3": 1,
+        "ป.4": 1,
+        "ป.5": 1,
+        "ป.6": 1
+      }
+    },
+    "career": {
+      "subject": "การงานอาชีพ",
+      "total": 6,
+      "byGrade": {
+        "ป.1": 1,
+        "ป.2": 1,
+        "ป.3": 1,
+        "ป.4": 1,
+        "ป.5": 1,
+        "ป.6": 1
+      }
+    },
+    "english": {
+      "subject": "ภาษาอังกฤษ",
+      "total": 6,
+      "byGrade": {
+        "ป.1": 1,
+        "ป.2": 1,
+        "ป.3": 1,
+        "ป.4": 1,
+        "ป.5": 1,
+        "ป.6": 1
+      }
+    }
+  },
+  "slots": [
+    {
+      "slotId": "thai|ท 1.1|ป.1",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 1 การอ่าน",
+      "standard": "ท 1.1",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ท 1.1 ป.1/1",
+          "text": "อ่านออกเสียงคำ คำคล้องจอง และข้อความสั้น ๆ",
+          "verbs": [
+            "อ่านออกเสียง",
+            "ระบุ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 1.1|ป.2",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 1 การอ่าน",
+      "standard": "ท 1.1",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ท 1.1 ป.2/2",
+          "text": "อธิบายความหมายของคำและข้อความที่อ่าน",
+          "verbs": [
+            "อธิบาย"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 1.1|ป.3",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 1 การอ่าน",
+      "standard": "ท 1.1",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ท 1.1 ป.3/3",
+          "text": "ตั้งคำถามและตอบคำถามเชิงเหตุผลเกี่ยวกับเรื่องที่อ่าน",
+          "verbs": [
+            "ตั้งคำถาม",
+            "ตอบคำถาม"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 1.1|ป.4",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 1 การอ่าน",
+      "standard": "ท 1.1",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ท 1.1 ป.4/3",
+          "text": "อ่านเรื่องสั้น ๆ แล้วตอบคำถามจากเรื่องที่อ่าน",
+          "verbs": [
+            "อ่าน",
+            "ตอบคำถาม"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 1.1|ป.5",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 1 การอ่าน",
+      "standard": "ท 1.1",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ท 1.1 ป.5/5",
+          "text": "วิเคราะห์และแสดงความคิดเห็นเกี่ยวกับเรื่องที่อ่านเพื่อนำไปใช้ในการดำเนินชีวิต",
+          "verbs": [
+            "วิเคราะห์",
+            "แสดงความคิดเห็น"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 1.1|ป.6",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 1 การอ่าน",
+      "standard": "ท 1.1",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ท 1.1 ป.6/4",
+          "text": "แยกข้อเท็จจริงและข้อคิดเห็นจากเรื่องที่อ่าน",
+          "verbs": [
+            "จำแนก",
+            "วิเคราะห์"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 2.1|ป.1",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 2 การเขียน",
+      "standard": "ท 2.1",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ท 2.1 ป.1/2",
+          "text": "เขียนสื่อสารด้วยคำและประโยคง่าย ๆ",
+          "verbs": [
+            "เขียน"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 2.1|ป.2",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 2 การเขียน",
+      "standard": "ท 2.1",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ท 2.1 ป.2/2",
+          "text": "เขียนเรื่องสั้น ๆ เกี่ยวกับประสบการณ์",
+          "verbs": [
+            "เขียน",
+            "เรียบเรียง"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 2.1|ป.3",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 2 การเขียน",
+      "standard": "ท 2.1",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ท 2.1 ป.3/2",
+          "text": "เขียนบรรยายเกี่ยวกับสิ่งใดสิ่งหนึ่งได้อย่างชัดเจน",
+          "verbs": [
+            "บรรยาย"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 2.1|ป.4",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 2 การเขียน",
+      "standard": "ท 2.1",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ท 2.1 ป.4/2",
+          "text": "เขียนสื่อสารโดยใช้คำได้ถูกต้อง ชัดเจน และเหมาะสม",
+          "verbs": [
+            "เขียน"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 2.1|ป.5",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 2 การเขียน",
+      "standard": "ท 2.1",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ท 2.1 ป.5/2",
+          "text": "เขียนสื่อสารโดยใช้คำได้ถูกต้อง ชัดเจน และเหมาะสม",
+          "verbs": [
+            "เขียน"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 2.1|ป.6",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 2 การเขียน",
+      "standard": "ท 2.1",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ท 2.1 ป.6/4",
+          "text": "เขียนเรียงความ",
+          "verbs": [
+            "เขียน",
+            "เรียบเรียง"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "thai|ท 3.1|ป.1",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 3 การฟัง การดู และการพูด",
+      "standard": "ท 3.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 3.1|ป.2",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 3 การฟัง การดู และการพูด",
+      "standard": "ท 3.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 3.1|ป.3",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 3 การฟัง การดู และการพูด",
+      "standard": "ท 3.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 3.1|ป.4",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 3 การฟัง การดู และการพูด",
+      "standard": "ท 3.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 3.1|ป.5",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 3 การฟัง การดู และการพูด",
+      "standard": "ท 3.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 3.1|ป.6",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 3 การฟัง การดู และการพูด",
+      "standard": "ท 3.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 4.1|ป.1",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 4 หลักการใช้ภาษาไทย",
+      "standard": "ท 4.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 4.1|ป.2",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 4 หลักการใช้ภาษาไทย",
+      "standard": "ท 4.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 4.1|ป.3",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 4 หลักการใช้ภาษาไทย",
+      "standard": "ท 4.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 4.1|ป.4",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 4 หลักการใช้ภาษาไทย",
+      "standard": "ท 4.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 4.1|ป.5",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 4 หลักการใช้ภาษาไทย",
+      "standard": "ท 4.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 4.1|ป.6",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 4 หลักการใช้ภาษาไทย",
+      "standard": "ท 4.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 5.1|ป.1",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 5 วรรณคดีและวรรณกรรม",
+      "standard": "ท 5.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 5.1|ป.2",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 5 วรรณคดีและวรรณกรรม",
+      "standard": "ท 5.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 5.1|ป.3",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 5 วรรณคดีและวรรณกรรม",
+      "standard": "ท 5.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 5.1|ป.4",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 5 วรรณคดีและวรรณกรรม",
+      "standard": "ท 5.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 5.1|ป.5",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 5 วรรณคดีและวรรณกรรม",
+      "standard": "ท 5.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "thai|ท 5.1|ป.6",
+      "subjectId": "thai",
+      "subject": "ภาษาไทย",
+      "strand": "สาระที่ 5 วรรณคดีและวรรณกรรม",
+      "standard": "ท 5.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.1|ป.1",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.1",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ค 1.1 ป.1/1",
+          "text": "บอกจำนวนของสิ่งต่าง ๆ แสดงสิ่งต่าง ๆ ตามจำนวนที่กำหนด อ่านและเขียนตัวเลขแสดงจำนวนนับไม่เกิน 100 และ 0",
+          "verbs": [
+            "บอก",
+            "แสดง",
+            "อ่าน",
+            "เขียน"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 1.1|ป.2",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.1",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ค 1.1 ป.2/4",
+          "text": "หาค่าของตัวไม่ทราบค่าในประโยคสัญลักษณ์แสดงการบวกและการลบของจำนวนนับไม่เกิน 1,000 และ 0",
+          "verbs": [
+            "คำนวณ",
+            "หาค่า"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 1.1|ป.3",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.1",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ค 1.1 ป.3/5",
+          "text": "หาค่าของตัวไม่ทราบค่าในประโยคสัญลักษณ์แสดงการคูณของจำนวน 1 หลักกับจำนวนไม่เกิน 4 หลัก",
+          "verbs": [
+            "คำนวณ",
+            "หาค่า"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 1.1|ป.4",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.1",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ค 1.1 ป.4/13",
+          "text": "หาผลบวก ผลลบของเศษส่วนและจำนวนคละที่ตัวส่วนตัวหนึ่งเป็นพหุคูณของอีกตัวหนึ่ง",
+          "verbs": [
+            "คำนวณ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 1.1|ป.5",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.1",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ค 1.1 ป.5/3",
+          "text": "หาผลบวก ผลลบของเศษส่วนและจำนวนคละ",
+          "verbs": [
+            "คำนวณ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 1.1|ป.6",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.1",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ค 1.1 ป.6/7",
+          "text": "หาผลลัพธ์ของการบวก ลบ คูณ หารระคนของเศษส่วนและจำนวนคละ",
+          "verbs": [
+            "คำนวณ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 1.2|ป.1",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.2|ป.2",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.2|ป.3",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.2|ป.4",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.2|ป.5",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.2|ป.6",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.3|ป.1",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.3",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.3|ป.2",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.3",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.3|ป.3",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.3",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.3|ป.4",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.3",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.3|ป.5",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.3",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 1.3|ป.6",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 1 จำนวนและพีชคณิต",
+      "standard": "ค 1.3",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 2.1|ป.1",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 2.1|ป.2",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 2.1|ป.3",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 2.1|ป.4",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 2.1|ป.5",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 2.1|ป.6",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 2.2|ป.1",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.2",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ค 2.2 ป.1/1",
+          "text": "จำแนกรูปสามเหลี่ยม รูปสี่เหลี่ยม วงกลม วงรี ทรงสี่เหลี่ยมมุมฉาก ทรงกลม ทรงกระบอก และกรวย",
+          "verbs": [
+            "จำแนก"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 2.2|ป.2",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.2",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ค 2.2 ป.2/1",
+          "text": "จำแนกและบอกลักษณะของรูปหลายเหลี่ยมและวงกลม",
+          "verbs": [
+            "จำแนก",
+            "บอก"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 2.2|ป.3",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.2",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ค 2.2 ป.3/1",
+          "text": "ระบุรูปเรขาคณิตสองมิติที่มีแกนสมมาตรและจำนวนแกนสมมาตร",
+          "verbs": [
+            "ระบุ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 2.2|ป.4",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.2",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ค 2.2 ป.4/2",
+          "text": "สร้างรูปสี่เหลี่ยมมุมฉากเมื่อกำหนดความยาวของด้าน",
+          "verbs": [
+            "สร้าง"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 2.2|ป.5",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.2",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ค 2.2 ป.5/3",
+          "text": "สร้างรูปสี่เหลี่ยมชนิดต่าง ๆ เมื่อกำหนดความยาวของด้านและขนาดของมุมหรือเมื่อกำหนดความยาวของเส้นทแยงมุม",
+          "verbs": [
+            "สร้าง"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 2.2|ป.6",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 2 การวัดและเรขาคณิต",
+      "standard": "ค 2.2",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ค 2.2 ป.6/1",
+          "text": "จำแนกรูปสามเหลี่ยมโดยพิจารณาจากสมบัติของรูป",
+          "verbs": [
+            "จำแนก",
+            "วิเคราะห์"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "math|ค 3.1|ป.1",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 3.1|ป.2",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 3.1|ป.3",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 3.1|ป.4",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 3.1|ป.5",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 3.1|ป.6",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 3.2|ป.1",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 3.2|ป.2",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 3.2|ป.3",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 3.2|ป.4",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 3.2|ป.5",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "math|ค 3.2|ป.6",
+      "subjectId": "math",
+      "subject": "คณิตศาสตร์",
+      "strand": "สาระที่ 3 สถิติและความน่าจะเป็น",
+      "standard": "ค 3.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.1|ป.1",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.1|ป.2",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.1|ป.3",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.1|ป.4",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.1|ป.5",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.1|ป.6",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.2|ป.1",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.2",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ว 1.2 ป.1/1",
+          "text": "ระบุชื่อ บรรยายลักษณะ และบอกหน้าที่ของส่วนต่าง ๆ ของร่างกายมนุษย์ สัตว์ และพืช",
+          "verbs": [
+            "ระบุ",
+            "บรรยาย",
+            "บอก"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 1.2|ป.2",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.2",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ว 1.2 ป.2/1",
+          "text": "ระบุว่าพืชต้องการแสงและน้ำเพื่อการเจริญเติบโต",
+          "verbs": [
+            "ระบุ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 1.2|ป.3",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.2",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ว 1.2 ป.3/1",
+          "text": "บรรยายสิ่งที่จำเป็นต่อการดำรงชีวิตและการเจริญเติบโตของมนุษย์และสัตว์",
+          "verbs": [
+            "บรรยาย"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 1.2|ป.4",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.2",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ว 1.2 ป.4/1",
+          "text": "บรรยายหน้าที่ของราก ลำต้น ใบ และดอกของพืชดอกโดยใช้ข้อมูลที่รวบรวมได้",
+          "verbs": [
+            "บรรยาย",
+            "อธิบาย"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 1.2|ป.5",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.2",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ว 1.2 ป.5/1",
+          "text": "ระบุและบรรยายโครงสร้างและลักษณะของสิ่งมีชีวิตที่เหมาะสมกับการดำรงชีวิต",
+          "verbs": [
+            "ระบุ",
+            "บรรยาย"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 1.2|ป.6",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.2",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ว 1.2 ป.6/1",
+          "text": "ระบุสารอาหารและบอกประโยชน์ของสารอาหารแต่ละประเภทจากอาหารที่ตนเองรับประทาน",
+          "verbs": [
+            "ระบุ",
+            "บอก"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 1.3|ป.1",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.3",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.3|ป.2",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.3",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.3|ป.3",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.3",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.3|ป.4",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.3",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.3|ป.5",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.3",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 1.3|ป.6",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 1 วิทยาศาสตร์ชีวภาพ",
+      "standard": "ว 1.3",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.1|ป.1",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.1|ป.2",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.1|ป.3",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.1|ป.4",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.1|ป.5",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.1|ป.6",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.2|ป.1",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.2|ป.2",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.2|ป.3",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.2|ป.4",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.2|ป.5",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.2|ป.6",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.3|ป.1",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.3",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.3|ป.2",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.3",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.3|ป.3",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.3",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.3|ป.4",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.3",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.3|ป.5",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.3",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 2.3|ป.6",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 2 วิทยาศาสตร์กายภาพ",
+      "standard": "ว 2.3",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 3.1|ป.1",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.1",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ว 3.1 ป.1/1",
+          "text": "ระบุดาวที่ปรากฏบนท้องฟ้าในเวลากลางวันและกลางคืนจากข้อมูลที่รวบรวมได้",
+          "verbs": [
+            "ระบุ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 3.1|ป.2",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.1",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ว 3.1 ป.2/1",
+          "text": "ระบุส่วนประกอบของดินและจำแนกชนิดของดินโดยใช้ลักษณะเนื้อดินและการจับตัวเป็นเกณฑ์",
+          "verbs": [
+            "ระบุ",
+            "จำแนก"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 3.1|ป.3",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.1",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ว 3.1 ป.3/1",
+          "text": "อธิบายแบบรูปเส้นทางการขึ้นและตกของดวงอาทิตย์โดยใช้หลักฐานเชิงประจักษ์",
+          "verbs": [
+            "อธิบาย",
+            "สังเกต"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 3.1|ป.4",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.1",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ว 3.1 ป.4/3",
+          "text": "สร้างแบบจำลองแสดงองค์ประกอบของระบบสุริยะ และอธิบายเปรียบเทียบคาบการโคจรของดาวเคราะห์ต่าง ๆ",
+          "verbs": [
+            "สร้าง",
+            "อธิบาย",
+            "เปรียบเทียบ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 3.1|ป.5",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.1",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ว 3.1 ป.5/1",
+          "text": "เปรียบเทียบความแตกต่างของดาวเคราะห์และดาวฤกษ์จากแบบจำลอง",
+          "verbs": [
+            "เปรียบเทียบ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 3.1|ป.6",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.1",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ว 3.1 ป.6/1",
+          "text": "สร้างแบบจำลองที่อธิบายการเกิดและเปรียบเทียบปรากฏการณ์สุริยุปราคาและจันทรุปราคา",
+          "verbs": [
+            "สร้าง",
+            "อธิบาย",
+            "เปรียบเทียบ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 3.2|ป.1",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 3.2|ป.2",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 3.2|ป.3",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 3.2|ป.4",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 3.2|ป.5",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 3.2|ป.6",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 3 วิทยาศาสตร์โลกและอวกาศ",
+      "standard": "ว 3.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 4.1|ป.1",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 4.1|ป.2",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 4.1|ป.3",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 4.1|ป.4",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 4.1|ป.5",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 4.1|ป.6",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "science|ว 4.2|ป.1",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.2",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ว 4.2 ป.1/1",
+          "text": "แก้ปัญหาอย่างง่ายโดยใช้การลองผิดลองถูก การเปรียบเทียบ",
+          "verbs": [
+            "แก้ปัญหา",
+            "เปรียบเทียบ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 4.2|ป.2",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.2",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ว 4.2 ป.2/1",
+          "text": "แสดงลำดับขั้นตอนการทำงานหรือการแก้ปัญหาอย่างง่ายโดยใช้ภาพ สัญลักษณ์ หรือข้อความ",
+          "verbs": [
+            "เรียงลำดับ",
+            "แก้ปัญหา"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 4.2|ป.3",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.2",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ว 4.2 ป.3/1",
+          "text": "แสดงอัลกอริทึมในการทำงานหรือการแก้ปัญหาอย่างง่ายโดยใช้ภาพ สัญลักษณ์ หรือข้อความ",
+          "verbs": [
+            "เรียงลำดับ",
+            "แก้ปัญหา"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 4.2|ป.4",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.2",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ว 4.2 ป.4/1",
+          "text": "ใช้เหตุผลเชิงตรรกะในการแก้ปัญหา การอธิบายการทำงาน และการคาดการณ์ผลลัพธ์จากปัญหาอย่างง่าย",
+          "verbs": [
+            "วิเคราะห์",
+            "แก้ปัญหา",
+            "คาดการณ์"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 4.2|ป.5",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.2",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ว 4.2 ป.5/1",
+          "text": "ใช้เหตุผลเชิงตรรกะในการแก้ปัญหา การอธิบายการทำงาน และการคาดการณ์ผลลัพธ์จากปัญหาอย่างง่าย",
+          "verbs": [
+            "วิเคราะห์",
+            "แก้ปัญหา",
+            "คาดการณ์"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "science|ว 4.2|ป.6",
+      "subjectId": "science",
+      "subject": "วิทยาศาสตร์และเทคโนโลยี",
+      "strand": "สาระที่ 4 เทคโนโลยี",
+      "standard": "ว 4.2",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ว 4.2 ป.6/1",
+          "text": "ใช้เหตุผลเชิงตรรกะในการอธิบายและออกแบบวิธีการแก้ปัญหาที่พบในชีวิตประจำวัน",
+          "verbs": [
+            "อธิบาย",
+            "ออกแบบ",
+            "แก้ปัญหา"
+          ],
+          "verification": "curated",
+          "sourceEdition": "ฉบับปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สสวท. / สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 1.1|ป.1",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 1.1|ป.2",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 1.1|ป.3",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 1.1|ป.4",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 1.1|ป.5",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 1.1|ป.6",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 1.2|ป.1",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 1.2|ป.2",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 1.2|ป.3",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 1.2|ป.4",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 1.2|ป.5",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 1.2|ป.6",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 1 ศาสนา ศีลธรรม จริยธรรม",
+      "standard": "ส 1.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 2.1|ป.1",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.1",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ส 2.1 ป.1/1",
+          "text": "บอกประโยชน์และปฏิบัติตนเป็นสมาชิกที่ดีของครอบครัวและโรงเรียน",
+          "verbs": [
+            "บอก",
+            "ปฏิบัติ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 2.1|ป.2",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.1",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ส 2.1 ป.2/2",
+          "text": "ปฏิบัติตนตามมารยาทไทย",
+          "verbs": [
+            "ปฏิบัติ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 2.1|ป.3",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.1",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ส 2.1 ป.3/2",
+          "text": "ระบุบทบาทหน้าที่ของสมาชิกของชุมชนในการมีส่วนร่วมในกิจกรรมต่าง ๆ",
+          "verbs": [
+            "ระบุ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 2.1|ป.4",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.1",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ส 2.1 ป.4/1",
+          "text": "ปฏิบัติตนเป็นพลเมืองดีตามวิถีประชาธิปไตยในฐานะสมาชิกที่ดีของชุมชน",
+          "verbs": [
+            "ปฏิบัติ",
+            "จำแนก"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 2.1|ป.5",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.1",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ส 2.1 ป.5/1",
+          "text": "ยกตัวอย่างและปฏิบัติตนตามสถานภาพ บทบาท สิทธิเสรีภาพ และหน้าที่ในฐานะพลเมืองดี",
+          "verbs": [
+            "ยกตัวอย่าง",
+            "ปฏิบัติ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 2.1|ป.6",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.1",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ส 2.1 ป.6/1",
+          "text": "ปฏิบัติตามกฎหมายที่เกี่ยวข้องกับชีวิตประจำวันของครอบครัวและชุมชน",
+          "verbs": [
+            "ปฏิบัติ",
+            "วิเคราะห์"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 2.2|ป.1",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 2.2|ป.2",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 2.2|ป.3",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 2.2|ป.4",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 2.2|ป.5",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 2.2|ป.6",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 2 หน้าที่พลเมือง วัฒนธรรม และการดำเนินชีวิตในสังคม",
+      "standard": "ส 2.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 3.1|ป.1",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.1",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ส 3.1 ป.1/1",
+          "text": "ระบุสินค้าและบริการที่ใช้ประโยชน์ในชีวิตประจำวัน",
+          "verbs": [
+            "ระบุ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 3.1|ป.2",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.1",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ส 3.1 ป.2/1",
+          "text": "ระบุทรัพยากรที่นำมาผลิตสินค้าและบริการที่ใช้ในชีวิตประจำวัน",
+          "verbs": [
+            "ระบุ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 3.1|ป.3",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.1",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ส 3.1 ป.3/1",
+          "text": "จำแนกความต้องการและความจำเป็นในการใช้สินค้าและบริการในการดำรงชีวิต",
+          "verbs": [
+            "จำแนก"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 3.1|ป.4",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.1",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ส 3.1 ป.4/1",
+          "text": "ระบุปัจจัยที่มีผลต่อการเลือกซื้อสินค้าและบริการ",
+          "verbs": [
+            "ระบุ",
+            "วิเคราะห์"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 3.1|ป.5",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.1",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ส 3.1 ป.5/1",
+          "text": "อธิบายปัจจัยการผลิตสินค้าและบริการ",
+          "verbs": [
+            "อธิบาย"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 3.1|ป.6",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.1",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ส 3.1 ป.6/1",
+          "text": "อธิบายบทบาทของผู้ผลิตที่มีความรับผิดชอบ",
+          "verbs": [
+            "อธิบาย",
+            "วิเคราะห์"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 + สาระภูมิศาสตร์ปรับปรุง พ.ศ. 2560",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "social|ส 3.2|ป.1",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 3.2|ป.2",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 3.2|ป.3",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 3.2|ป.4",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 3.2|ป.5",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 3.2|ป.6",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 3 เศรษฐศาสตร์",
+      "standard": "ส 3.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.1|ป.1",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.1|ป.2",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.1|ป.3",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.1|ป.4",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.1|ป.5",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.1|ป.6",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.2|ป.1",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.2|ป.2",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.2|ป.3",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.2|ป.4",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.2|ป.5",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.2|ป.6",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.3|ป.1",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.3",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.3|ป.2",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.3",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.3|ป.3",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.3",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.3|ป.4",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.3",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.3|ป.5",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.3",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 4.3|ป.6",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 4 ประวัติศาสตร์",
+      "standard": "ส 4.3",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.1|ป.1",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.1|ป.2",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.1|ป.3",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.1|ป.4",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.1|ป.5",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.1|ป.6",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.2|ป.1",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.2|ป.2",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.2|ป.3",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.2|ป.4",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.2|ป.5",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "social|ส 5.2|ป.6",
+      "subjectId": "social",
+      "subject": "สังคมศึกษา ศาสนาและวัฒนธรรม",
+      "strand": "สาระที่ 5 ภูมิศาสตร์",
+      "standard": "ส 5.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 1.1|ป.1",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 1 การเจริญเติบโตและพัฒนาการของมนุษย์",
+      "standard": "พ 1.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 1.1|ป.2",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 1 การเจริญเติบโตและพัฒนาการของมนุษย์",
+      "standard": "พ 1.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 1.1|ป.3",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 1 การเจริญเติบโตและพัฒนาการของมนุษย์",
+      "standard": "พ 1.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 1.1|ป.4",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 1 การเจริญเติบโตและพัฒนาการของมนุษย์",
+      "standard": "พ 1.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 1.1|ป.5",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 1 การเจริญเติบโตและพัฒนาการของมนุษย์",
+      "standard": "พ 1.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 1.1|ป.6",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 1 การเจริญเติบโตและพัฒนาการของมนุษย์",
+      "standard": "พ 1.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 2.1|ป.1",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 2 ชีวิตและครอบครัว",
+      "standard": "พ 2.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 2.1|ป.2",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 2 ชีวิตและครอบครัว",
+      "standard": "พ 2.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 2.1|ป.3",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 2 ชีวิตและครอบครัว",
+      "standard": "พ 2.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 2.1|ป.4",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 2 ชีวิตและครอบครัว",
+      "standard": "พ 2.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 2.1|ป.5",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 2 ชีวิตและครอบครัว",
+      "standard": "พ 2.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 2.1|ป.6",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 2 ชีวิตและครอบครัว",
+      "standard": "พ 2.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.1|ป.1",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.1|ป.2",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.1|ป.3",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.1|ป.4",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.1|ป.5",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.1|ป.6",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.2|ป.1",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.2|ป.2",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.2|ป.3",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.2|ป.4",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.2|ป.5",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 3.2|ป.6",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 3 การเคลื่อนไหว การออกกำลังกาย การเล่นเกม กีฬาไทย และกีฬาสากล",
+      "standard": "พ 3.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 4.1|ป.1",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 4 การสร้างเสริมสุขภาพ สมรรถภาพ และการป้องกันโรค",
+      "standard": "พ 4.1",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "พ 4.1 ป.1/1",
+          "text": "ปฏิบัติตนตามหลักสุขบัญญัติแห่งชาติตามคำแนะนำ",
+          "verbs": [
+            "ปฏิบัติ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "health|พ 4.1|ป.2",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 4 การสร้างเสริมสุขภาพ สมรรถภาพ และการป้องกันโรค",
+      "standard": "พ 4.1",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "พ 4.1 ป.2/1",
+          "text": "บอกลักษณะของการมีสุขภาพดี",
+          "verbs": [
+            "บอก",
+            "จำแนก"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "health|พ 4.1|ป.3",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 4 การสร้างเสริมสุขภาพ สมรรถภาพ และการป้องกันโรค",
+      "standard": "พ 4.1",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "พ 4.1 ป.3/1",
+          "text": "อธิบายการติดต่อและวิธีการป้องกันการแพร่กระจายของโรค",
+          "verbs": [
+            "อธิบาย"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "health|พ 4.1|ป.4",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 4 การสร้างเสริมสุขภาพ สมรรถภาพ และการป้องกันโรค",
+      "standard": "พ 4.1",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "พ 4.1 ป.4/1",
+          "text": "อธิบายความสัมพันธ์ระหว่างสิ่งแวดล้อมกับสุขภาพ",
+          "verbs": [
+            "อธิบาย",
+            "เชื่อมโยง"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "health|พ 4.1|ป.5",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 4 การสร้างเสริมสุขภาพ สมรรถภาพ และการป้องกันโรค",
+      "standard": "พ 4.1",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "พ 4.1 ป.5/1",
+          "text": "แสดงพฤติกรรมที่เห็นความสำคัญของการปฏิบัติตนตามสุขบัญญัติแห่งชาติ",
+          "verbs": [
+            "ปฏิบัติ",
+            "วิเคราะห์"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "health|พ 4.1|ป.6",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 4 การสร้างเสริมสุขภาพ สมรรถภาพ และการป้องกันโรค",
+      "standard": "พ 4.1",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "พ 4.1 ป.6/1",
+          "text": "แสดงพฤติกรรมในการป้องกันและแก้ไขปัญหาสิ่งแวดล้อมที่มีผลต่อสุขภาพ",
+          "verbs": [
+            "ปฏิบัติ",
+            "แก้ปัญหา"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "health|พ 5.1|ป.1",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 5 ความปลอดภัยในชีวิต",
+      "standard": "พ 5.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 5.1|ป.2",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 5 ความปลอดภัยในชีวิต",
+      "standard": "พ 5.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 5.1|ป.3",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 5 ความปลอดภัยในชีวิต",
+      "standard": "พ 5.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 5.1|ป.4",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 5 ความปลอดภัยในชีวิต",
+      "standard": "พ 5.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 5.1|ป.5",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 5 ความปลอดภัยในชีวิต",
+      "standard": "พ 5.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "health|พ 5.1|ป.6",
+      "subjectId": "health",
+      "subject": "สุขศึกษาและพลศึกษา",
+      "strand": "สาระที่ 5 ความปลอดภัยในชีวิต",
+      "standard": "พ 5.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 1.1|ป.1",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.1",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ศ 1.1 ป.1/1",
+          "text": "อภิปรายเกี่ยวกับรูปร่าง ลักษณะ และขนาดของสิ่งต่าง ๆ รอบตัวในธรรมชาติและสิ่งที่มนุษย์สร้างขึ้น",
+          "verbs": [
+            "อภิปราย",
+            "สังเกต"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "art|ศ 1.1|ป.2",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.1",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ศ 1.1 ป.2/3",
+          "text": "สร้างงานทัศนศิลป์ต่าง ๆ โดยใช้ทัศนธาตุที่เน้นเส้น รูปร่าง",
+          "verbs": [
+            "สร้าง"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "art|ศ 1.1|ป.3",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.1",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ศ 1.1 ป.3/4",
+          "text": "วาดภาพระบายสีสิ่งของรอบตัว",
+          "verbs": [
+            "วาด",
+            "ระบายสี"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "art|ศ 1.1|ป.4",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.1",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ศ 1.1 ป.4/3",
+          "text": "จำแนกทัศนธาตุของสิ่งต่าง ๆ ในธรรมชาติ สิ่งแวดล้อม และงานทัศนศิลป์",
+          "verbs": [
+            "จำแนก"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "art|ศ 1.1|ป.5",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.1",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ศ 1.1 ป.5/2",
+          "text": "เปรียบเทียบความแตกต่างระหว่างงานทัศนศิลป์ที่สร้างสรรค์ด้วยวัสดุ อุปกรณ์ และวิธีการที่ต่างกัน",
+          "verbs": [
+            "เปรียบเทียบ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "art|ศ 1.1|ป.6",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.1",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ศ 1.1 ป.6/1",
+          "text": "ระบุสีคู่ตรงข้าม และอภิปรายเกี่ยวกับการใช้สีคู่ตรงข้ามในการถ่ายทอดความคิดและอารมณ์",
+          "verbs": [
+            "ระบุ",
+            "อภิปราย"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "art|ศ 1.2|ป.1",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 1.2|ป.2",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 1.2|ป.3",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 1.2|ป.4",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 1.2|ป.5",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 1.2|ป.6",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 1 ทัศนศิลป์",
+      "standard": "ศ 1.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.1|ป.1",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.1|ป.2",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.1|ป.3",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.1|ป.4",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.1|ป.5",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.1|ป.6",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.2|ป.1",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.2|ป.2",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.2|ป.3",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.2|ป.4",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.2|ป.5",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 2.2|ป.6",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 2 ดนตรี",
+      "standard": "ศ 2.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.1|ป.1",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.1|ป.2",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.1|ป.3",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.1|ป.4",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.1|ป.5",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.1|ป.6",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.2|ป.1",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.2|ป.2",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.2|ป.3",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.2|ป.4",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.2|ป.5",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "art|ศ 3.2|ป.6",
+      "subjectId": "art",
+      "subject": "ศิลปะ",
+      "strand": "สาระที่ 3 นาฏศิลป์",
+      "standard": "ศ 3.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "career|ง 1.1|ป.1",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 1 การดำรงชีวิตและครอบครัว",
+      "standard": "ง 1.1",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ง 1.1 ป.1/1",
+          "text": "บอกวิธีการทำงานเพื่อช่วยเหลือตนเอง",
+          "verbs": [
+            "บอก",
+            "เรียงลำดับ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 / โครงสร้างใช้กับหลักสูตรสถานศึกษา",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "career|ง 1.1|ป.2",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 1 การดำรงชีวิตและครอบครัว",
+      "standard": "ง 1.1",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ง 1.1 ป.2/1",
+          "text": "บอกวิธีการและประโยชน์การทำงานเพื่อช่วยเหลือตนเองและครอบครัว",
+          "verbs": [
+            "บอก",
+            "อธิบาย"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 / โครงสร้างใช้กับหลักสูตรสถานศึกษา",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "career|ง 1.1|ป.3",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 1 การดำรงชีวิตและครอบครัว",
+      "standard": "ง 1.1",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ง 1.1 ป.3/1",
+          "text": "อธิบายวิธีการและประโยชน์การทำงานเพื่อช่วยเหลือตนเอง ครอบครัว และส่วนรวม",
+          "verbs": [
+            "อธิบาย",
+            "เรียงลำดับ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 / โครงสร้างใช้กับหลักสูตรสถานศึกษา",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "career|ง 1.1|ป.4",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 1 การดำรงชีวิตและครอบครัว",
+      "standard": "ง 1.1",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ง 1.1 ป.4/1",
+          "text": "อธิบายเหตุผลในการทำงานให้บรรลุเป้าหมาย",
+          "verbs": [
+            "อธิบาย",
+            "วิเคราะห์"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 / โครงสร้างใช้กับหลักสูตรสถานศึกษา",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "career|ง 1.1|ป.5",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 1 การดำรงชีวิตและครอบครัว",
+      "standard": "ง 1.1",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ง 1.1 ป.5/2",
+          "text": "ใช้ทักษะการจัดการในการทำงานอย่างเป็นระบบ ประณีต และมีความคิดสร้างสรรค์",
+          "verbs": [
+            "ปฏิบัติ",
+            "จัดลำดับ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 / โครงสร้างใช้กับหลักสูตรสถานศึกษา",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "career|ง 1.1|ป.6",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 1 การดำรงชีวิตและครอบครัว",
+      "standard": "ง 1.1",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ง 1.1 ป.6/2",
+          "text": "ใช้ทักษะการจัดการในการทำงานและมีทักษะการทำงานร่วมกัน",
+          "verbs": [
+            "ปฏิบัติ",
+            "วางแผน"
+          ],
+          "verification": "curated",
+          "sourceEdition": "พุทธศักราช 2551 / โครงสร้างใช้กับหลักสูตรสถานศึกษา",
+          "sourcePublisher": "สำนักวิชาการและมาตรฐานการศึกษา สพฐ."
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "career|ง 2.1|ป.1",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 2 การอาชีพ",
+      "standard": "ง 2.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "career|ง 2.1|ป.2",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 2 การอาชีพ",
+      "standard": "ง 2.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "career|ง 2.1|ป.3",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 2 การอาชีพ",
+      "standard": "ง 2.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "career|ง 2.1|ป.4",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 2 การอาชีพ",
+      "standard": "ง 2.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "career|ง 2.1|ป.5",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 2 การอาชีพ",
+      "standard": "ง 2.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "career|ง 2.1|ป.6",
+      "subjectId": "career",
+      "subject": "การงานอาชีพ",
+      "strand": "สาระที่ 2 การอาชีพ",
+      "standard": "ง 2.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.1|ป.1",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.1",
+      "grade": "ป.1",
+      "indicators": [
+        {
+          "grade": "ป.1",
+          "code": "ต 1.1 ป.1/2",
+          "text": "ระบุตัวอักษรและเสียง อ่านออกเสียงและสะกดคำง่าย ๆ ถูกต้องตามหลักการอ่าน",
+          "verbs": [
+            "ระบุ",
+            "อ่าน",
+            "สะกด"
+          ],
+          "verification": "curated",
+          "sourceEdition": "",
+          "sourcePublisher": ""
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "english|ต 1.1|ป.2",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.1",
+      "grade": "ป.2",
+      "indicators": [
+        {
+          "grade": "ป.2",
+          "code": "ต 1.1 ป.2/3",
+          "text": "เลือกภาพตรงตามความหมายของคำ กลุ่มคำ และประโยคที่ฟัง",
+          "verbs": [
+            "เลือก",
+            "จับคู่"
+          ],
+          "verification": "curated",
+          "sourceEdition": "",
+          "sourcePublisher": ""
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "english|ต 1.1|ป.3",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.1",
+      "grade": "ป.3",
+      "indicators": [
+        {
+          "grade": "ป.3",
+          "code": "ต 1.1 ป.3/3",
+          "text": "เลือกหรือระบุภาพหรือสัญลักษณ์ตรงตามความหมายของกลุ่มคำและประโยคที่ฟัง",
+          "verbs": [
+            "เลือก",
+            "ระบุ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "",
+          "sourcePublisher": ""
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "english|ต 1.1|ป.4",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.1",
+      "grade": "ป.4",
+      "indicators": [
+        {
+          "grade": "ป.4",
+          "code": "ต 1.1 ป.4/3",
+          "text": "เลือกหรือระบุภาพหรือสัญลักษณ์ตรงตามความหมายของประโยคและข้อความสั้น ๆ ที่ฟังหรืออ่าน",
+          "verbs": [
+            "เลือก",
+            "ระบุ"
+          ],
+          "verification": "curated",
+          "sourceEdition": "",
+          "sourcePublisher": ""
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "english|ต 1.1|ป.5",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.1",
+      "grade": "ป.5",
+      "indicators": [
+        {
+          "grade": "ป.5",
+          "code": "ต 1.1 ป.5/4",
+          "text": "บอกใจความสำคัญและตอบคำถามจากการฟังและอ่านบทสนทนาและนิทานง่าย ๆ หรือเรื่องสั้น ๆ",
+          "verbs": [
+            "บอก",
+            "ตอบคำถาม"
+          ],
+          "verification": "curated",
+          "sourceEdition": "",
+          "sourcePublisher": ""
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "english|ต 1.1|ป.6",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.1",
+      "grade": "ป.6",
+      "indicators": [
+        {
+          "grade": "ป.6",
+          "code": "ต 1.1 ป.6/4",
+          "text": "บอกใจความสำคัญและตอบคำถามจากการฟังและอ่านบทสนทนา นิทานง่าย ๆ และเรื่องเล่า",
+          "verbs": [
+            "บอก",
+            "ตอบคำถาม"
+          ],
+          "verification": "curated",
+          "sourceEdition": "",
+          "sourcePublisher": ""
+        }
+      ],
+      "populatedCount": 1,
+      "status": "populated"
+    },
+    {
+      "slotId": "english|ต 1.2|ป.1",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.2|ป.2",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.2|ป.3",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.2|ป.4",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.2|ป.5",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.2|ป.6",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.3|ป.1",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.3",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.3|ป.2",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.3",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.3|ป.3",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.3",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.3|ป.4",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.3",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.3|ป.5",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.3",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 1.3|ป.6",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 1 ภาษาเพื่อการสื่อสาร",
+      "standard": "ต 1.3",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.1|ป.1",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.1|ป.2",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.1|ป.3",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.1|ป.4",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.1|ป.5",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.1|ป.6",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.2|ป.1",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.2|ป.2",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.2|ป.3",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.2|ป.4",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.2|ป.5",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 2.2|ป.6",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 2 ภาษาและวัฒนธรรม",
+      "standard": "ต 2.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 3.1|ป.1",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 3 ภาษากับความสัมพันธ์กับกลุ่มสาระการเรียนรู้อื่น",
+      "standard": "ต 3.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 3.1|ป.2",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 3 ภาษากับความสัมพันธ์กับกลุ่มสาระการเรียนรู้อื่น",
+      "standard": "ต 3.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 3.1|ป.3",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 3 ภาษากับความสัมพันธ์กับกลุ่มสาระการเรียนรู้อื่น",
+      "standard": "ต 3.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 3.1|ป.4",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 3 ภาษากับความสัมพันธ์กับกลุ่มสาระการเรียนรู้อื่น",
+      "standard": "ต 3.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 3.1|ป.5",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 3 ภาษากับความสัมพันธ์กับกลุ่มสาระการเรียนรู้อื่น",
+      "standard": "ต 3.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 3.1|ป.6",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 3 ภาษากับความสัมพันธ์กับกลุ่มสาระการเรียนรู้อื่น",
+      "standard": "ต 3.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.1|ป.1",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.1",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.1|ป.2",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.1",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.1|ป.3",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.1",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.1|ป.4",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.1",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.1|ป.5",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.1",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.1|ป.6",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.1",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.2|ป.1",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.2",
+      "grade": "ป.1",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.2|ป.2",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.2",
+      "grade": "ป.2",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.2|ป.3",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.2",
+      "grade": "ป.3",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.2|ป.4",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.2",
+      "grade": "ป.4",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.2|ป.5",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.2",
+      "grade": "ป.5",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    },
+    {
+      "slotId": "english|ต 4.2|ป.6",
+      "subjectId": "english",
+      "subject": "ภาษาอังกฤษ",
+      "strand": "สาระที่ 4 ภาษากับความสัมพันธ์กับชุมชนและโลก",
+      "standard": "ต 4.2",
+      "grade": "ป.6",
+      "indicators": [],
+      "populatedCount": 0,
+      "status": "pending_official_text"
+    }
+  ]
+}
