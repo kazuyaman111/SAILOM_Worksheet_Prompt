@@ -1,199 +1,292 @@
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-let platform="canva";
-const verbsMap=[
-  {keys:["อ่าน","ตอบคำถาม"],acts:["เลือกตอบ","ตอบคำถามสั้น"],why:"ตัวชี้วัดเน้นการอ่านและตอบคำถาม จึงควรมีข้อความสั้นแล้วถามความเข้าใจ"},
-  {keys:["จำแนก","แยก"],acts:["จัดหมวดหมู่","จับคู่"],why:"ตัวชี้วัดเน้นการจำแนก จึงควรให้เด็กเห็นตัวอย่างแล้วจัดกลุ่ม"},
-  {keys:["อธิบาย","บรรยาย"],acts:["ตอบคำถามสั้น","วิเคราะห์ภาพ"],why:"ตัวชี้วัดเน้นการอธิบาย จึงควรมีพื้นที่ให้เด็กเขียนคำตอบสั้น ๆ"},
-  {keys:["วิเคราะห์","เปรียบเทียบ"],acts:["สถานการณ์","วิเคราะห์ภาพ","ตอบคำถามสั้น"],why:"ตัวชี้วัดเน้นการคิดขั้นสูง จึงควรมีข้อมูลหรือสถานการณ์ให้วิเคราะห์"},
-  {keys:["คำนวณ","หาผล","บวก","ลบ","คูณ","หาร"],acts:["เติมคำ","เลือกตอบ"],why:"ตัวชี้วัดเน้นทักษะคำนวณ ควรมีโจทย์เรียงจากง่ายไปยาก"},
-  {keys:["เรียง","ลำดับ"],acts:["เรียงลำดับ","จับคู่"],why:"ตัวชี้วัดเน้นลำดับขั้นหรือเหตุการณ์"},
-  {keys:["สร้าง","วาด","ออกแบบ"],acts:["วิเคราะห์ภาพ","สถานการณ์"],why:"ตัวชี้วัดเน้นการสร้างผลงาน ควรมีภารกิจสร้างชิ้นงานหรือวางแผน"}
+let currentMode="quick", platform="canva";
+
+const activities=[
+ ["จับคู่","🔗","คำ–ภาพ / เหตุ–ผล"],["เติมคำ","✍️","คำสำคัญ"],["เลือกตอบ","✅","ตรวจความเข้าใจ"],
+ ["จัดหมวดหมู่","🧩","จำแนก / แยกกลุ่ม"],["วิเคราะห์ภาพ","🖼️","สังเกต / เชื่อมโยง"],
+ ["ตอบคำถามสั้น","💬","อธิบายเหตุผล"],["เรียงลำดับ","🔢","ขั้นตอน / เหตุการณ์"],
+ ["สถานการณ์","💡","ประยุกต์ใช้"],["วาด/ระบายสี","🎨","เหมาะเด็กเล็ก"],["ตาราง/แผนภาพ","📊","สรุปความคิด"]
 ];
-function val(id){return $("#"+id).value}
+
+const behaviorRules=[
+ {keys:["อ่าน","ใจความ","ตอบคำถาม"],acts:["เลือกตอบ","ตอบคำถามสั้น"],reason:"เน้นอ่านเพื่อทำความเข้าใจและตอบจากข้อมูล"},
+ {keys:["จำแนก","แยก","จัดกลุ่ม","ระบุ"],acts:["จัดหมวดหมู่","จับคู่","เลือกตอบ"],reason:"เน้นการจำแนกหรือระบุ"},
+ {keys:["อธิบาย","บรรยาย","เหตุผล"],acts:["ตอบคำถามสั้น","วิเคราะห์ภาพ"],reason:"เน้นการอธิบายความเข้าใจ"},
+ {keys:["วิเคราะห์","เปรียบเทียบ","คาดคะเน","ความคิดเห็น"],acts:["สถานการณ์","วิเคราะห์ภาพ","ตอบคำถามสั้น"],reason:"เน้นคิดขั้นสูงและใช้เหตุผล"},
+ {keys:["คำนวณ","บวก","ลบ","คูณ","หาร","เศษส่วน"],acts:["เติมคำ","เลือกตอบ"],reason:"เน้นทักษะคำนวณที่ตรวจคำตอบได้"},
+ {keys:["ลำดับ","เรียง","ขั้นตอน"],acts:["เรียงลำดับ","จับคู่"],reason:"เน้นลำดับหรือขั้นตอน"},
+ {keys:["สร้าง","วาด","ออกแบบ"],acts:["วาด/ระบายสี","ตาราง/แผนภาพ"],reason:"เน้นการสร้างผลงาน"},
+ {keys:["สรุป","แผนภาพ","ตาราง"],acts:["ตาราง/แผนภาพ","ตอบคำถามสั้น"],reason:"เน้นการจัดระบบความคิด"}
+];
+
+const gradeProfile={
+ "ป.1":{maxQ:6,acts:1,img:"มาก",text:"สั้นมาก",note:"ภาพใหญ่ คำสั่งสั้นมาก พื้นที่เขียนมาก"},
+ "ป.2":{maxQ:7,acts:1,img:"มาก",text:"สั้น",note:"ใช้ภาพช่วยมาก คำถามไม่ซับซ้อน"},
+ "ป.3":{maxQ:8,acts:2,img:"กลางถึงมาก",text:"สั้น",note:"ผสมภาพกับข้อความสั้น"},
+ "ป.4":{maxQ:9,acts:2,img:"กลาง",text:"ปานกลาง",note:"เริ่มเพิ่มการอธิบายและเชื่อมโยง"},
+ "ป.5":{maxQ:10,acts:2,img:"กลาง",text:"ปานกลาง",note:"เพิ่มข้อคิด วิเคราะห์ และประยุกต์"},
+ "ป.6":{maxQ:10,acts:2,img:"พอเหมาะ",text:"ปานกลาง",note:"รองรับการคิดวิเคราะห์สั้น ๆ"}
+};
+
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
+function v(id){return $("#"+id)?.value||""}
 function styleVal(){return $('input[name=style]:checked')?.value||"Cute Kids"}
-function selectedActs(){return $$("#activities input:checked").map(x=>x.value)}
-function analyze(){
-  const t=val("indicator");
-  let acts=[],reasons=[];
-  verbsMap.forEach(m=>{
-    if(m.keys.some(k=>t.includes(k))){
-      m.acts.forEach(a=>{if(!acts.includes(a))acts.push(a)});
-      reasons.push(m.why);
-    }
-  });
-  if(!acts.length){acts=["จับคู่","เติมคำ","ตอบคำถามสั้น"];reasons=["ยังไม่พบคำกริยาชัดเจน ระบบใช้รูปแบบกิจกรรมกลาง"];}
-  acts=acts.slice(0,3);
-  if($("#smart").checked){
-    $$("#activities input").forEach(x=>x.checked=acts.includes(x.value));
-  }
-  $("#analysisBox").innerHTML=`<b>🤖 Smart Engine แนะนำ:</b> ${acts.map(a=>`<span class="tag">${a}</span>`).join("")}<div>${reasons[0]}</div>`;
-  renderPaper();
+function historyVal(){return $('input[name=historyType]:checked')?.value||"Timeline"}
+function selectedActs(){return $$("#activityGrid input:checked").map(x=>x.value)}
+function toast(t){$("#toast").textContent=t;$("#toast").classList.add("show");setTimeout(()=>$("#toast").classList.remove("show"),1500)}
+
+function initActivities(){
+ $("#activityGrid").innerHTML=activities.map(([a,i,s])=>`<label><input type="checkbox" value="${a}"><span>${i}</span><b>${a}</b><small>${s}</small></label>`).join("");
+ $$("#activityGrid input").forEach(x=>x.addEventListener("change",()=>{diagnose();renderPaper()}));
 }
-function demo(){
-  $("#grade").value="ป.4";
-  $("#subject").value="ภาษาไทย";
-  $("#topic").value="การอ่านจับใจความจากเรื่องสั้น";
-  $("#indicator").value="ท 1.1 ป.4/3 อ่านเรื่องสั้น ๆ ตามเวลาที่กำหนดและตอบคำถามจากเรื่องที่อ่าน";
-  $("#duration").value="20 นาที";
-  $("#difficulty").value="ปานกลาง";
-  $("#questionCount").value="8";
-  $("#activityCount").value="2";
-  $("#smart").checked=true;
-  analyze(); generate();
+function recommend(){
+ const text=(v("indicator")+" "+v("topic")).toLowerCase();
+ let acts=[],reasons=[];
+ behaviorRules.forEach(r=>{
+   if(r.keys.some(k=>text.includes(k))){
+     r.acts.forEach(a=>{if(!acts.includes(a))acts.push(a)});
+     if(!reasons.includes(r.reason))reasons.push(r.reason);
+   }
+ });
+ if(v("subject")==="ประวัติศาสตร์"){
+   if(text.includes("เหตุการณ์")||text.includes("พัฒนา")){if(!acts.includes("เรียงลำดับ"))acts.unshift("เรียงลำดับ")}
+   if(text.includes("ปัจจัย")||text.includes("สาเหตุ")||text.includes("ผล")){if(!acts.includes("สถานการณ์"))acts.push("สถานการณ์")}
+   if(!reasons.length)reasons.push("วิชาประวัติศาสตร์ควรมีลำดับเวลา หลักฐาน หรือความสัมพันธ์เหตุ–ผล");
+ }
+ if(!acts.length){acts=["จับคู่","เลือกตอบ","ตอบคำถามสั้น"];reasons=["ใช้กิจกรรมกลางที่เหมาะกับใบงานประถม"];}
+ if(["ป.1","ป.2"].includes(v("grade")) && !acts.includes("วาด/ระบายสี"))acts.push("วาด/ระบายสี");
+ return {acts:[...new Set(acts)].slice(0,3),reason:reasons[0]};
 }
-function clearForm(){
-  $("#topic").value="";
-  $("#indicator").value="";
-  $$("#activities input").forEach(x=>x.checked=false);
-  $("#output").value="";
-  $("#qualityScore").textContent="0";
-  $("#qualityText").textContent="ยังไม่ได้สร้าง";
-  $("#qualityList").innerHTML="";
-  renderPaper();
+function autoPlan(){
+ const p=gradeProfile[v("grade")],r=recommend();
+ $("#activityCount").value=String(Math.min(p.acts,r.acts.length||p.acts));
+ $("#questionCount").value=String(Math.min(p.maxQ, v("duration").startsWith("15")?5:8));
+ $$("#activityGrid input").forEach(cb=>cb.checked=r.acts.includes(cb.value));
+ if(v("subject")==="ประวัติศาสตร์"){
+   $('input[name=style][value="Thai Heritage"]').checked=true;
+   $("#color").value="น้ำตาล–ทอง–ครีม";
+ }
+ $("#quickPlan").innerHTML=`แนะนำ <b>${r.acts.join(" + ")}</b> • ประมาณ <b>${$("#questionCount").value} ข้อ</b> • ${p.note}<br><small>เหตุผล: ${r.reason}</small>`;
+ diagnose();renderPaper();
 }
-
-function updateCapacity(){
-  const q=Number($("#questionCount").value), a=Number($("#activityCount").value), g=$("#grade").value, mins=parseInt($("#duration").value);
-  const maxQ={"ป.1":6,"ป.2":7,"ป.3":8,"ป.4":9,"ป.5":10,"ป.6":10}[g]||8;
-  let risk=0;if(q>maxQ)risk+=2;if(a>=3)risk++;if(mins<=15&&q>=8)risk+=2;
-  const box=$("#capacityWarning");
-  if(risk===0)box.innerHTML=`✅ <b>A4 น่าจะพอดี</b> — ${q} ข้อ / ${a} กิจกรรม สำหรับ ${g}`;
-  else if(risk<=2)box.innerHTML=`⚠️ <b>ค่อนข้างแน่น</b> — หาก Canva จัดหน้าแน่น แนะนำลดข้อหรือกิจกรรม`;
-  else box.innerHTML=`⛔ <b>เสี่ยงล้น A4</b> — ควรลดจำนวนข้อ/กิจกรรมก่อนเจน`;
-  return risk;
+function setMode(mode){
+ currentMode=mode;
+ $$(".mode-card").forEach(x=>x.classList.toggle("active",x.dataset.mode===mode));
+ $$(".mode-panel").forEach(x=>x.classList.toggle("hidden",x.dataset.panel!==mode));
+ if(mode==="history")$("#subject").value="ประวัติศาสตร์";
+ if(mode==="quick")autoPlan();
+ diagnose();renderPaper();
+ document.querySelector(`[data-panel="${mode}"]`)?.scrollIntoView({behavior:"smooth",block:"center"});
 }
-function teacherKeyPrompt(){
-  return `สร้างเฉลยสำหรับครูของใบงานต่อไปนี้ โดยไม่ใส่เฉลยลงในหน้าใบงานนักเรียน\n\nระดับชั้น: ${$("#grade").value}\nวิชา: ${$("#subject").value}\nเรื่อง: ${$("#topic").value}\nตัวชี้วัด/ผลลัพธ์การเรียนรู้: ${$("#indicator").value}\nรูปแบบกิจกรรม: ${selectedActs().join(" + ")}\nจำนวนข้อประมาณ: ${$("#questionCount").value}\n\nให้ตอบ:\n1. เฉลยทีละข้อแบบกระชับ\n2. ข้อเขียนให้ระบุแนวคำตอบที่ยอมรับได้\n3. ถ้าตอบได้หลายแบบ ให้ระบุเกณฑ์ตรวจ\n4. ตรวจว่าเฉลยสอดคล้องตัวชี้วัดและระดับชั้น\n5. หากโจทย์ใดกำกวม ให้แจ้งครูว่าควรแก้อย่างไร`;
+function effectiveActs(){
+ if(currentMode==="history") return [historyVal(), "ตอบคำถามสั้น"];
+ const sel=selectedActs();
+ return sel.length?sel:recommend().acts;
 }
+function qCount(){
+ if(currentMode==="quick")return Number($("#questionCount").value||8);
+ return Number($("#questionCount").value||8);
+}
+function diagnose(){
+ const p=gradeProfile[v("grade")],acts=effectiveActs(),q=qCount(),mins=parseInt(v("duration"))||20;
+ const checks=[
+  ["ตัวชี้วัด",v("indicator").trim().length>=8,"มีสิ่งที่ต้องการวัดชัดเจน"],
+  ["เหมาะกับวัย",q<=p.maxQ+1,`${v("grade")} แนะนำไม่เกินประมาณ ${p.maxQ} ข้อ`],
+  ["กิจกรรม",acts.length>0,"มีกิจกรรมที่เชื่อมกับพฤติกรรม"],
+  ["เวลา",!(mins<=15&&q>6),`${q} ข้อ ภายใน ${mins} นาที`],
+  ["A4",!(q>10||acts.length>3),"จำนวนข้อและกิจกรรมไม่แน่นเกินไป"]
+ ];
+ const score=Math.round(checks.filter(x=>x[1]).length/checks.length*100);
+ $("#doctorScore").textContent=score;$("#doctorMeter").style.width=score+"%";
+ $("#doctorHeadline").textContent=score>=90?"พร้อมสร้างใบงาน":score>=70?"เกือบพร้อม":"ควรปรับก่อน";
+ $("#doctorSummary").textContent=score>=90?"โครงเหมาะกับการนำไปสร้าง Prompt":score>=70?"มีบางจุดที่ระบบแนะนำให้ปรับ":"ข้อมูลหรือความหนาแน่นยังไม่เหมาะ";
+ $("#doctorChecks").innerHTML=checks.map(c=>`<div class="doctor-item ${c[1]?"ok":"warn"}"><b>${c[1]?"✅":"⚠️"} ${c[0]}</b><small>${c[2]}</small></div>`).join("");
+ let advice=[];
+ if(q>p.maxQ)advice.push(`ลดจำนวนข้อเหลือประมาณ ${p.maxQ} ข้อเพื่อให้เหมาะกับ ${v("grade")}`);
+ if(mins<=15&&q>6)advice.push("เวลา 15 นาทีควรลดจำนวนข้อ");
+ if(!v("indicator").trim())advice.push("ควรใส่ตัวชี้วัด/ผลลัพธ์ก่อนสร้าง");
+ if(!advice.length)advice.push("โครงนี้เหมาะสำหรับทดลองสร้างใบงาน A4 หน้าเดียว");
+ $("#doctorAdvice").innerHTML="<b>คำแนะนำ:</b> "+advice.join(" • ");
+ return score;
+}
+function common(){
+ return {
+  mode:currentMode,grade:v("grade"),subject:v("subject"),purpose:v("purpose"),topic:v("topic"),
+  indicator:v("indicator"),duration:v("duration"),difficulty:v("difficulty"),classSize:v("classSize"),
+  acts:effectiveActs(),questions:qCount(),style:styleVal(),color:v("color"),orientation:v("orientation"),density:v("density"),
+  history:historyVal(),profile:gradeProfile[v("grade")]
+ };
+}
+function advancedLines(){
+ const lines=[];
+ if($("#variantABC").checked)lines.push("- สร้างใบงาน 3 ชุด A/B/C เนื้อหาคนละชุด แต่ตัวชี้วัดและระดับความยากใกล้เคียงกัน");
+ if($("#useRubric").checked)lines.push("- เพิ่ม Rubric แบบสั้นสำหรับข้อเขียน/ชิ้นงาน");
+ if($("#useQR").checked)lines.push(`- เว้นกรอบ QR Code มุมล่างขวา${v("qrUrl")?` สำหรับลิงก์ ${v("qrUrl")}`:""}`);
+ if($("#localContext").checked)lines.push(`- เชื่อมโจทย์กับบริบทท้องถิ่น: ${v("localText")||"บริบทใกล้ตัวนักเรียน"}`);
+ return lines.join("\n");
+}
+function mainPrompt(){
+ const d=common();
+ const targetLead={
+  canva:"สร้างงานออกแบบใบงานนักเรียนประถมใน Canva AI / Magic Design ให้พร้อมพิมพ์และใช้งานจริง",
+  chatgpt:"คุณเป็นผู้เชี่ยวชาญด้านหลักสูตรและการออกแบบใบงานประถม สร้างใบงานพร้อมใช้ตามข้อกำหนดต่อไปนี้",
+  gemini:"ทำหน้าที่เป็น Instructional Designer ระดับประถม สร้างใบงานที่วัดผลลัพธ์การเรียนรู้และพร้อมจัดหน้า A4"
+ }[platform];
+ const modeNote={
+  quick:"ระบบได้เลือกกิจกรรมให้อัตโนมัติจากตัวชี้วัดและวัยของผู้เรียน",
+  custom:"ครูเป็นผู้เลือกกิจกรรมและจำนวนข้อด้วยตนเอง",
+  history:`ใช้โหมดประวัติศาสตร์เฉพาะทาง: ${d.history} โดยเน้นการคิดเชิงเวลา หลักฐาน ความต่อเนื่อง การเปลี่ยนแปลง หรือเหตุ–ผลตามความเหมาะสม`,
+  advanced:"ใช้ข้อกำหนดขั้นสูงตามตัวเลือกด้านล่าง"
+ }[currentMode];
+ return `${targetLead}
 
-function makePrompt(){
-  if($("#smart").checked) analyze();
-  const acts=selectedActs();
-  const extras=[];
-  if($("#nameField").checked)extras.push("มีช่องชื่อ–นามสกุล / ชั้น / เลขที่");
-  if($("#scoreField").checked)extras.push("มีช่องคะแนนรวม");
-  if($("#instructionField").checked)extras.push("แต่ละกิจกรรมมีคำชี้แจงสั้นและชัดเจน");
-  if($("#onePage").checked)extras.push("เนื้อหาทั้งหมดต้องจบในกระดาษ A4 เพียง 1 หน้า ห้ามล้นไปหน้าที่ 2");
-  if($("#answerKey").checked)extras.push("เพิ่มแนวเฉลยแบบย่อ");
-  const lead={
-    canva:"สร้างใบงานนักเรียนประถมแบบพร้อมออกแบบใน Canva AI / Magic Design ตามรายละเอียดต่อไปนี้",
-    chatgpt:"คุณเป็นผู้เชี่ยวชาญด้านการออกแบบใบงานระดับประถม จงสร้างใบงานฉบับพร้อมใช้ตามรายละเอียดต่อไปนี้",
-    gemini:"ทำหน้าที่เป็น Instructional Designer ระดับประถม สร้างใบงานพร้อมโครงจัดหน้าและเนื้อหาตามรายละเอียดต่อไปนี้"
-  }[platform];
-  return `${lead}
+=== ข้อมูลการเรียนรู้ ===
+ระดับชั้น: ${d.grade}
+วิชา: ${d.subject}
+เรื่อง: ${d.topic}
+ตัวชี้วัด/ผลลัพธ์: ${d.indicator}
+ใช้เพื่อ: ${d.purpose}
+เวลา: ${d.duration}
+ความยาก: ${d.difficulty}
+ขนาดชั้นเรียน: ${d.classSize}
+โหมด: ${modeNote}
 
-[ข้อมูลการเรียนรู้]
-ระดับชั้น: ${val("grade")}
-วิชา: ${val("subject")}
-เรื่อง: ${val("topic")||"ให้ตั้งชื่อเรื่องจากตัวชี้วัด"}
-ตัวชี้วัด/ผลลัพธ์การเรียนรู้: ${val("indicator")}
-เวลาในการทำ: ${val("duration")}
-ระดับความยาก: ${val("difficulty")}
+=== Smart Worksheet Design ===
+กิจกรรมหลัก: ${d.acts.join(" + ")}
+จำนวนข้อรวมโดยประมาณ: ${d.questions} ข้อ
+หลักการสำคัญ: ใบงานต้องวัด “พฤติกรรมตามตัวชี้วัด” ไม่ใช่เพียงมีเนื้อหาเกี่ยวข้อง
+ก่อนเขียนโจทย์ ให้ถอดตัวชี้วัดเป็น “นักเรียนต้องทำอะไรได้” แล้วออกแบบภารกิจให้เห็นพฤติกรรมนั้นจริง
+${d.profile.note}
 
-[เป้าหมาย]
-สร้างใบงานที่ “วัดตัวชี้วัดจริง” ไม่ใช่เพียงมีเนื้อหาเกี่ยวข้อง
-ถอดตัวชี้วัดเป็นพฤติกรรมที่นักเรียนต้องแสดง แล้วให้ทุกกิจกรรมวัดพฤติกรรมนั้นโดยตรง
+=== การเขียนโจทย์ ===
+1. ใช้ภาษาเหมาะกับ ${d.grade} ประโยคสั้น ชัด ไม่กำกวม
+2. ทุกข้อสัมพันธ์กับเรื่อง “${d.topic}” และตัวชี้วัด
+3. เรียงจากง่าย → เข้าใจ → ประยุกต์ ตามความเหมาะสม
+4. ถ้าเป็นข้อเลือกตอบ ตัวลวงต้องสมเหตุสมผลและไม่เดาได้จากความยาว
+5. ถ้าเป็นข้อเขียน ให้เว้นพื้นที่พอต่อคำตอบที่คาดหวัง
+6. ถ้าใช้ภาพ ให้ภาพช่วยเรียนรู้หรือช่วยตอบโจทย์ ไม่ใช่ตกแต่งอย่างเดียว
+7. ตรวจคำสะกด ความถูกต้องของเนื้อหา และความสมเหตุสมผลของเฉลย
 
-[โครงกิจกรรม]
-จำนวนกิจกรรม: ${val("activityCount")}
-จำนวนข้อรวม: ประมาณ ${val("questionCount")} ข้อ
-รูปแบบกิจกรรม: ${acts.length?acts.join(" + "):"เลือกกิจกรรมที่เหมาะสมที่สุดจากตัวชี้วัด"}
-เรียงโจทย์จากง่าย → เข้าใจ → ประยุกต์
-แต่ละกิจกรรมต้องมีคำสั่งสั้น ไม่กำกวม และทำได้จริงภายใน ${val("duration")}
+=== การออกแบบ ===
+กระดาษ: ${d.orientation}
+สไตล์: ${d.style}
+โทนสี: ${d.color}
+ความหนาแน่น: ${d.density}
+ภาพประกอบสำหรับวัยนี้: ${d.profile.img}
+ข้อความ: ${d.profile.text}
+ใช้ตัวอักษรไทยขนาดใหญ่ อ่านง่าย contrast ชัด
+ใช้กรอบโค้งมน ไอคอนเป็นมิตร และ white space พอเหมาะ
+${$("#nameField").checked?"- มีช่องชื่อ–นามสกุล ชั้น เลขที่":""}
+${$("#scoreField").checked?"- มีช่องคะแนนรวม":""}
+${$("#instructions").checked?"- มีคำชี้แจงสั้นก่อนแต่ละกิจกรรม":""}
+${$("#inkSave").checked?"- ประหยัดหมึก ลดพื้นสีทึบ":""}
+${advancedLines()}
 
-[ข้อกำหนดด้านเนื้อหา]
-- ใช้ภาษาเหมาะกับนักเรียน ${val("grade")}
-- โจทย์ทุกข้อสัมพันธ์กับเรื่อง “${val("topic")}”
-- ทุกข้อมีคำตอบหรือเกณฑ์ตรวจที่ชัดเจน
-- ถ้าเป็นข้อเลือกตอบ ให้ตัวลวงสมเหตุสมผล
-- ถ้าเป็นข้อเขียน ให้เว้นพื้นที่ตามความยาวคำตอบที่คาดหวัง
-- ถ้าใช้ภาพ ให้ภาพช่วยการเรียนรู้หรือช่วยตอบโจทย์ ไม่ใช่ตกแต่งอย่างเดียว
-- หลีกเลี่ยงข้อความยาวเกินวัย
-- ตรวจคำสะกดและความถูกต้องของโจทย์ก่อนส่งผลลัพธ์
+=== ข้อกำหนด A4 ===
+- ส่วนหัวประมาณ 12–15%
+- พื้นที่กิจกรรมประมาณ 75–80%
+- ส่วนท้ายประมาณ 5–8%
+${$("#onePage").checked?"- ต้องจบใน A4 หน้าเดียว ห้ามขึ้นหน้าที่ 2 หากพื้นที่ไม่พอให้ลดคำ/การตกแต่งก่อน ห้ามลดฟอนต์จนอ่านยาก":""}
+- อย่าวางภาพพื้นหลังใต้ข้อความ
+- ต้องมีพื้นที่เขียนคำตอบจริง
 
-[ดีไซน์]
-ขนาด: ${val("orientation")}
-สไตล์: ${styleVal()}
-โทนสี: ${val("color")}
-ความหนาแน่น: ${val("density")}
-ออกแบบให้เหมาะกับเด็กประถม ตัวอักษรใหญ่ อ่านง่าย สีสดใสแต่ไม่รก
-ใช้กรอบโค้งมน ไอคอน/ภาพการ์ตูนที่เป็นมิตร และมี white space เพียงพอ
-${extras.map(x=>"- "+x).join("\n")}
-
-[การจัดหน้า A4]
-ส่วนหัวประมาณ 15%: ชื่อใบงาน + วิชา + ชั้น + ข้อมูลนักเรียน
-ส่วนกิจกรรมประมาณ 75%: แบ่งเป็นบล็อกกิจกรรมชัดเจน
-ส่วนท้ายประมาณ 10%: คะแนน / ข้อความให้กำลังใจ
-${$("#onePage").checked?"สำคัญมาก: หากพื้นที่ไม่พอ ให้ลดคำ ลดองค์ประกอบตกแต่ง หรือปรับจำนวนบรรทัด แต่ห้ามลดตัวอักษรจนเล็กและห้ามขึ้นหน้าที่ 2":""}
-
-[ผลลัพธ์ที่ต้องการ]
+=== ผลลัพธ์ที่ต้องสร้าง ===
 1. ชื่อใบงาน
-2. จุดประสงค์การเรียนรู้ 1–2 ข้อจากตัวชี้วัด
+2. จุดประสงค์การเรียนรู้ 1–2 ข้อ
 3. คำชี้แจง
 4. โจทย์ครบตามจำนวน
-5. ระบุภาพ/ไอคอนที่ควรใช้
-6. คำแนะนำการจัดวางแต่ละส่วนบน A4
-${$("#answerKey").checked?"7. แนวเฉลยแบบย่อ":""}
+5. รายละเอียดภาพ/ไอคอนที่ควรใช้
+6. Blueprint การจัดวางบน A4
+${$("#useRubric").checked?"7. Rubric แบบย่อ":""}
 
-สร้างผลลัพธ์ให้ดูเป็นใบงานเด็กประถมคุณภาพสูง พร้อมนำไปใช้ในชั้นเรียนจริง`;
+ตรวจอีกครั้งว่าเด็กทำเสร็จได้ใน ${d.duration} และหน้าไม่แน่นเกินไป
+ต้องการผลลัพธ์เป็น “ใบงานพร้อมใช้จริง” ไม่ใช่โปสเตอร์หรืออินโฟกราฟิก`;
 }
-function qualityCheck(prompt){
-  const checks=[
-    ["มีระดับชั้น",prompt.includes("ระดับชั้น:")],
-    ["มีตัวชี้วัด/ผลลัพธ์",prompt.includes("ตัวชี้วัด/ผลลัพธ์การเรียนรู้:") && val("indicator").trim().length>5],
-    ["กำหนด A4",prompt.includes("A4")],
-    ["กำหนดกิจกรรม",selectedActs().length>0],
-    ["มีข้อกำหนดหน้าเดียว",!$("#onePage").checked || prompt.includes("ห้ามล้น")],
-    ["มีข้อกำหนดภาษาเหมาะกับวัย",prompt.includes("ภาษาเหมาะกับนักเรียน")],
-    ["มีคำสั่งให้ตรวจความถูกต้อง",prompt.includes("ตรวจคำสะกด")],
-    ["ความหนาแน่น A4 อยู่ในเกณฑ์",updateCapacity()<3]
-  ];
-  const score=Math.round(checks.filter(x=>x[1]).length/checks.length*100);
-  $("#qualityScore").textContent=score;
-  $("#qualityText").textContent=score>=90?"พร้อมนำไปทดลองเจน":score>=75?"ใช้ได้ แต่ควรตรวจเพิ่ม":"ควรเติมข้อมูล";
-  $("#qualityList").innerHTML=checks.map(x=>`<li>${x[1]?"✅":"⚠️"} ${x[0]}</li>`).join("");
+function keyPromptText(){
+ const d=common();
+ return `สร้าง “เฉลยสำหรับครู” ของใบงานนี้ โดยแยกจากหน้าใบงานนักเรียน
+
+ชั้น: ${d.grade}
+วิชา: ${d.subject}
+เรื่อง: ${d.topic}
+ตัวชี้วัด/ผลลัพธ์: ${d.indicator}
+กิจกรรม: ${d.acts.join(" + ")}
+จำนวนข้อ: ประมาณ ${d.questions}
+
+ให้:
+1. เฉลยทีละข้อ
+2. ข้อเขียนให้แนวคำตอบที่ยอมรับได้
+3. ถ้าตอบได้หลายแบบ ให้เกณฑ์ตรวจ/ให้คะแนน
+4. ตรวจความสอดคล้องกับตัวชี้วัด
+5. แจ้งข้อที่อาจกำกวมและเสนอวิธีแก้
+ห้ามนำเฉลยไปใส่ในหน้าใบงานนักเรียน`;
+}
+function imagePromptText(){
+ const d=common();
+ return `สร้างภาพประกอบสำหรับใบงานนักเรียน ${d.grade} วิชา ${d.subject} เรื่อง “${d.topic}”
+สไตล์ภาพ: ${d.style}
+โทนสี: ${d.color}
+ภาพต้องเป็นมิตรกับเด็ก ดูสะอาด ชัด และใช้พื้นที่ไม่มาก
+หากเป็นภาพที่ใช้ตอบโจทย์ ให้รายละเอียดชัดพอสำหรับการสังเกต
+หลีกเลี่ยงข้อความในภาพ เว้นแต่จำเป็น
+พื้นหลังเรียบหรือโปร่ง เหมาะสำหรับนำไปวางในใบงาน A4
+${d.subject==="ประวัติศาสตร์"?"หากเป็นบุคคล/สถานที่ทางประวัติศาสตร์ ให้เคารพบริบทไทยและหลีกเลี่ยงรายละเอียดที่อาจทำให้เข้าใจผิด":""}`;
 }
 function generate(){
-  const p=makePrompt();
-  $("#output").value=p;
-  $("#teacherKeyWrap").style.display=$("#teacherKey").checked?"block":"none";
-  $("#keyOutput").value=$("#teacherKey").checked?teacherKeyPrompt():"";
-  updateCapacity();
-  qualityCheck(p);
-  renderPaper();
-  toast("สร้าง Prompt แล้ว");
+ if(currentMode==="quick")autoPlan();
+ diagnose();
+ $("#mainPrompt").value=mainPrompt();
+ $("#keyBlock").classList.toggle("hidden",!$("#teacherKey").checked);
+ $("#imageBlock").classList.toggle("hidden",!$("#imagePrompt").checked);
+ $("#keyPrompt").value=$("#teacherKey").checked?keyPromptText():"";
+ $("#imagePromptOut").value=$("#imagePrompt").checked?imagePromptText():"";
+ renderPaper();toast("สร้าง Prompt แล้ว");
 }
 function renderPaper(){
-  const acts=selectedActs().length?selectedActs():["กิจกรรมฝึกทักษะ"];
-  const n=Math.max(1,+val("activityCount"));
-  const shown=acts.slice(0,n);
-  const per=Math.max(2,Math.floor(+val("questionCount")/shown.length));
-  $("#paper").innerHTML=`<div class="paperhead"><h3>${esc(val("topic")||"ชื่อใบงาน")}</h3><div>${esc(val("subject"))} • ${esc(val("grade"))}</div><div class="meta"><div>ชื่อ<div class="line"></div></div><div>ชั้น<div class="line"></div></div><div>เลขที่<div class="line"></div></div></div></div>
-  <div class="box"><h4>🎯 จุดประสงค์</h4><div>${esc(val("indicator")||"ตัวชี้วัด/ผลลัพธ์การเรียนรู้")}</div></div>
-  ${shown.map((a,i)=>`<div class="box"><h4>กิจกรรมที่ ${i+1}: ${esc(a)}</h4><small>คำชี้แจงสั้น กระชับ เหมาะกับ ${esc(val("grade"))}</small>${Array.from({length:Math.min(per,4)},(_,k)=>`<div class="q"><b>${k+1}.</b><span>โจทย์ตามเรื่อง ${esc(val("topic")||"เนื้อหา")}</span></div>`).join("")}<div class="answer"></div></div>`).join("")}`;
+ const d=common(),acts=d.acts.slice(0,currentMode==="quick"?2:Math.min(3,Number($("#activityCount").value||2)));
+ $("#paper").innerHTML=`<div class="paperhead"><h3>${esc(d.topic||"ชื่อใบงาน")}</h3><div>${esc(d.subject)} • ${esc(d.grade)} • ${esc(d.purpose)}</div><div class="meta"><div>ชื่อ<div class="line"></div></div><div>ชั้น<div class="line"></div></div><div>เลขที่<div class="line"></div></div></div></div>
+ <div class="box"><h4>🎯 จุดประสงค์</h4><div>${esc(d.indicator||"ตัวชี้วัด/ผลลัพธ์การเรียนรู้")}</div></div>
+ ${acts.map((a,i)=>`<div class="box"><h4>กิจกรรมที่ ${i+1}: ${esc(a)}</h4><small>คำชี้แจงสั้น กระชับ เหมาะกับ ${esc(d.grade)}</small>${Array.from({length:Math.min(4,Math.max(2,Math.ceil(d.questions/acts.length)))},(_,k)=>`<div class="q"><b>${k+1}.</b><span>โจทย์ที่วัดพฤติกรรมตามตัวชี้วัด เรื่อง ${esc(d.topic)}</span></div>`).join("")}<div class="answer"></div></div>`).join("")}`;
 }
-async function copyOut(){if(!$("#output").value)generate();try{await navigator.clipboard.writeText($("#output").value);toast("คัดลอก Prompt แล้ว")}catch{$("#output").select();document.execCommand("copy");toast("คัดลอกแล้ว")}}
-function download(){if(!$("#output").value)generate();const b=new Blob([$("#output").value],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="SAILOM-Worksheet-Prompt-Demo.txt";a.click();URL.revokeObjectURL(a.href)}
-function alternate(){
-  $("#smart").checked=false;
-  const all=$$("#activities input");all.forEach(x=>x.checked=false);
-  [...all].sort(()=>Math.random()-.5).slice(0,2).forEach(x=>x.checked=true);
-  generate();
+function snapshot(){
+ return {id:Date.now(),savedAt:new Date().toLocaleString("th-TH"),mode:currentMode,platform,
+  fields:["grade","subject","purpose","topic","indicator","duration","difficulty","classSize","activityCount","questionCount","progression","color","orientation","density","localText","qrUrl"].reduce((o,id)=>(o[id]=v(id),o),{}),
+  acts:selectedActs(),style:styleVal(),history:historyVal(),
+  flags:["variantABC","useRubric","useQR","localContext","imagePrompt","teacherKey","nameField","scoreField","instructions","onePage","inkSave"].reduce((o,id)=>(o[id]=$("#"+id)?.checked||false,o),{}),
+  prompts:{main:$("#mainPrompt").value,key:$("#keyPrompt").value,image:$("#imagePromptOut").value}
+ };
 }
-function toast(t){$("#toast").textContent=t;$("#toast").classList.add("show");setTimeout(()=>$("#toast").classList.remove("show"),1500)}
-function esc(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
+function save(){
+ const list=JSON.parse(localStorage.getItem("sailomV3Projects")||"[]");list.unshift(snapshot());localStorage.setItem("sailomV3Projects",JSON.stringify(list.slice(0,25)));updateSaved();toast("บันทึกงานแล้ว");
+}
+function updateSaved(){$("#savedCount").textContent=JSON.parse(localStorage.getItem("sailomV3Projects")||"[]").length}
+function openDrawer(){
+ const list=JSON.parse(localStorage.getItem("sailomV3Projects")||"[]");
+ $("#savedList").innerHTML=list.length?list.map((x,i)=>`<div class="saved-item"><b>${esc((x.fields?.grade||"")+" "+(x.fields?.subject||"")+" — "+(x.fields?.topic||"ไม่มีชื่อ"))}</b><small>${esc(x.savedAt)}</small><div class="saved-actions"><button data-open="${i}">เปิด</button><button data-copy="${i}">คัดลอก</button><button data-del="${i}">ลบ</button></div></div>`).join(""):`<p style="color:#708396">ยังไม่มีงานที่บันทึก</p>`;
+ $("#drawer").classList.add("show");$("#drawerBack").classList.add("show");
+ $$("#savedList [data-open]").forEach(b=>b.onclick=()=>load(list[+b.dataset.open]));
+ $$("#savedList [data-copy]").forEach(b=>b.onclick=async()=>{await navigator.clipboard.writeText(list[+b.dataset.copy].prompts?.main||"");toast("คัดลอก Prompt แล้ว")});
+ $$("#savedList [data-del]").forEach(b=>b.onclick=()=>{list.splice(+b.dataset.del,1);localStorage.setItem("sailomV3Projects",JSON.stringify(list));updateSaved();openDrawer()});
+}
+function load(x){
+ Object.entries(x.fields||{}).forEach(([id,val])=>{if($("#"+id))$("#"+id).value=val});
+ Object.entries(x.flags||{}).forEach(([id,val])=>{if($("#"+id))$("#"+id).checked=val});
+ $$("#activityGrid input").forEach(cb=>cb.checked=(x.acts||[]).includes(cb.value));
+ if(x.style){const r=$(`input[name=style][value="${x.style}"]`);if(r)r.checked=true}
+ if(x.history){const r=$(`input[name=historyType][value="${x.history}"]`);if(r)r.checked=true}
+ if(x.prompts){$("#mainPrompt").value=x.prompts.main||"";$("#keyPrompt").value=x.prompts.key||"";$("#imagePromptOut").value=x.prompts.image||""}
+ setMode(x.mode||"quick");closeDrawer();diagnose();renderPaper();toast("เปิดงานแล้ว");
+}
+function closeDrawer(){$("#drawer").classList.remove("show");$("#drawerBack").classList.remove("show")}
+async function copy(id){const t=$("#"+id).value;if(!t)generate();try{await navigator.clipboard.writeText($("#"+id).value)}catch{}toast("คัดลอกแล้ว")}
 
-$("#demoBtn").onclick=demo;$("#clearBtn").onclick=clearForm;$("#generateBtn").onclick=generate;$("#altBtn").onclick=alternate;$("#copyBtn").onclick=copyOut;$("#downloadBtn").onclick=download;
-$("#indicator").addEventListener("input",analyze);$("#smart").onchange=analyze;$("#topic").addEventListener("input",renderPaper);$("#questionCount").onchange=renderPaper;$("#activityCount").onchange=renderPaper;
-$$("#activities input,input[name=style]").forEach(x=>x.onchange=renderPaper);
-$$(".platform").forEach(b=>b.onclick=()=>{$$(".platform").forEach(x=>x.classList.remove("active"));b.classList.add("active");platform=b.dataset.platform;generate();});
-demo();
-
-function projectSnapshot(){return {id:Date.now(),name:`${$("#grade").value} ${$("#subject").value} — ${$("#topic").value||"ไม่มีชื่อ"}`,savedAt:new Date().toLocaleString("th-TH"),fields:{grade:$("#grade").value,subject:$("#subject").value,topic:$("#topic").value,indicator:$("#indicator").value,duration:$("#duration").value,difficulty:$("#difficulty").value,activityCount:$("#activityCount").value,questionCount:$("#questionCount").value,orientation:$("#orientation").value,color:$("#color").value,density:$("#density").value},smart:$("#smart").checked,activities:selectedActs(),style:$('input[name="style"]:checked')?.value||"Cute Kids",teacherKey:$("#teacherKey").checked,output:$("#output").value,keyOutput:$("#keyOutput").value}}
-function saveProject(){const list=JSON.parse(localStorage.getItem("sailomSavedProjects")||"[]");list.unshift(projectSnapshot());localStorage.setItem("sailomSavedProjects",JSON.stringify(list.slice(0,20)));updateSavedCount();showToast("บันทึกงานแล้ว")}
-function updateSavedCount(){const e=$("#savedCount");if(e)e.textContent=JSON.parse(localStorage.getItem("sailomSavedProjects")||"[]").length}
-function openSaved(){const list=JSON.parse(localStorage.getItem("sailomSavedProjects")||"[]");$("#savedList").innerHTML=list.length?list.map((x,i)=>`<div class="saved-item"><b>${escapeHtml(x.name)}</b><small>${escapeHtml(x.savedAt)}</small><div class="saved-actions"><button data-load="${i}">เปิด</button><button data-copy="${i}">คัดลอก</button><button data-del="${i}">ลบ</button></div></div>`).join(""):`<p style="color:#718396">ยังไม่มีงานที่บันทึก</p>`;$("#savedPanel").classList.add("show");$("#savedBack").classList.add("show");$$("#savedList [data-load]").forEach(b=>b.onclick=()=>loadSaved(list[+b.dataset.load]));$$("#savedList [data-copy]").forEach(b=>b.onclick=async()=>{await navigator.clipboard.writeText(list[+b.dataset.copy].output||"");showToast("คัดลอก Prompt แล้ว")});$$("#savedList [data-del]").forEach(b=>b.onclick=()=>{list.splice(+b.dataset.del,1);localStorage.setItem("sailomSavedProjects",JSON.stringify(list));updateSavedCount();openSaved()})}
-function closeSaved(){$("#savedPanel").classList.remove("show");$("#savedBack").classList.remove("show")}
-function loadSaved(x){Object.entries(x.fields||{}).forEach(([id,val])=>{const e=$("#"+id);if(e)e.value=val});$("#smart").checked=x.smart;$$("#activities input").forEach(cb=>cb.checked=(x.activities||[]).includes(cb.value));const r=$(`input[name="style"][value="${x.style}"]`);if(r)r.checked=true;$("#teacherKey").checked=x.teacherKey!==false;$("#output").value=x.output||"";$("#keyOutput").value=x.keyOutput||"";analyze();renderPaper();if(x.output)qualityCheck(x.output);closeSaved();showToast("เปิดงานแล้ว")}
-function exportProject(){const blob=new Blob([JSON.stringify(projectSnapshot(),null,2)],{type:"application/json;charset=utf-8"});const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="SAILOM-Worksheet-Project.json";a.click();URL.revokeObjectURL(url)}
-$("#saveBtn").onclick=saveProject;$("#savedBtn").onclick=openSaved;$("#closeSaved").onclick=closeSaved;$("#savedBack").onclick=closeSaved;$("#copyKeyBtn").onclick=async()=>{if(!$("#keyOutput").value)generate();await navigator.clipboard.writeText($("#keyOutput").value);showToast("คัดลอก Prompt เฉลยแล้ว")};$("#exportBtn").onclick=exportProject;$("#teacherKey").onchange=generate;["questionCount","activityCount","duration","grade"].forEach(id=>$("#"+id).addEventListener("change",updateCapacity));updateSavedCount();updateCapacity();
+initActivities();
+$$(".mode-card").forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+$$("[data-go]").forEach(b=>b.onclick=()=>setMode(b.dataset.go));
+$$(".platform").forEach(b=>b.onclick=()=>{$$(".platform").forEach(x=>x.classList.remove("active"));b.classList.add("active");platform=b.dataset.platform;generate()});
+$("#autoPlanBtn").onclick=autoPlan;$("#generateBtn").onclick=generate;$("#saveBtn").onclick=save;$("#savedBtn").onclick=openDrawer;$("#closeDrawer").onclick=closeDrawer;$("#drawerBack").onclick=closeDrawer;
+$("#copyMain").onclick=()=>copy("mainPrompt");$("#copyKey").onclick=()=>copy("keyPrompt");$("#copyImage").onclick=()=>copy("imagePromptOut");
+["grade","subject","purpose","topic","indicator","duration","difficulty"].forEach(id=>$("#"+id).addEventListener("input",()=>{if(currentMode==="quick")autoPlan();else diagnose();renderPaper()}));
+["questionCount","activityCount","orientation","density"].forEach(id=>$("#"+id)?.addEventListener("change",()=>{diagnose();renderPaper()}));
+$$('input[name="historyType"],input[name="style"],.checks input,.advanced-grid input').forEach(x=>x.addEventListener("change",()=>{diagnose();renderPaper()}));
+updateSaved();autoPlan();generate();

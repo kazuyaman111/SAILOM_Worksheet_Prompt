@@ -3,152 +3,207 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#146fdd">
-<title>SAILOM ใบงาน AI — Demo</title>
+<meta name="theme-color" content="#116bd8">
+<meta name="description" content="SAILOM ใบงาน AI - ผู้ช่วยครูออกแบบใบงาน A4 ด้วย AI">
+<title>SAILOM ใบงาน AI V3.0</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <div class="shell topin">
-    <div class="brand"><div class="mark">S</div><div><b>SAILOM ใบงาน AI</b><small>Prompt → Canva Worksheet Demo</small></div></div>
-    <span class="status">ทดลองสร้างได้ทันที</span>
+<header class="topbar">
+  <div class="shell nav">
+    <div class="brand">
+      <img src="sailom-logo.png" class="logo" alt="SAILOM">
+      <div><b>SAILOM ใบงาน AI</b><small>#ห้องเรียนครูชัช • Worksheet Studio V3.0</small></div>
+    </div>
+    <div class="nav-actions">
+      <button id="savedBtn" class="ghost">💾 งานของฉัน <span id="savedCount">0</span></button>
+      <div class="counter">👁 <span>ผู้เข้าชม</span> <b id="visitorCount">—</b></div>
+    </div>
   </div>
 </header>
 
 <section class="hero shell">
   <div>
-    <span class="pill">V2.3 • PILOT COMPLETE</span>
-    <h1>สร้าง Prompt ใบงาน<br><em>พร้อมเอาไปใช้กับ Canva AI</em></h1>
-    <p>เป้าหมายของเวอร์ชันนี้คือพิสูจน์ว่า “กดไม่กี่ครั้งแล้วได้ Prompt ที่สร้างใบงาน A4 หน้าเดียวได้จริง”</p>
+    <span class="pill">V3.0 • SAILOM WORKSHEET STUDIO</span>
+    <h1>ให้ครูคิดน้อยลง<br><em>แต่ได้ใบงานที่คิดมาดีขึ้น</em></h1>
+    <p>เลือกชั้น วิชา เรื่อง และสิ่งที่อยากวัด แล้วให้ SAILOM ช่วยคิดกิจกรรม คุม A4 ตรวจคุณภาพ และสร้าง Prompt พร้อมใช้กับ Canva AI / ChatGPT / Gemini</p>
     <div class="hero-actions">
-      <button id="demoBtn" class="primary big">⚡ ทดลองด้วยข้อมูลตัวอย่าง</button>
-      <button id="clearBtn" class="secondary big">เริ่มกรอกเอง</button>
-      <button id="savedBtn" class="secondary big">💾 งานที่บันทึก (<span id="savedCount">0</span>)</button>
+      <button class="primary big" data-go="quick">⚡ ให้ SAILOM คิดให้</button>
+      <button class="secondary big" data-go="custom">🎨 ออกแบบเอง</button>
     </div>
   </div>
-  <div class="hero-card">
-    <div class="hero-card-title">FLOW</div>
-    <div class="flow">เลือกข้อมูล <span>→</span> Smart Engine <span>→</span> Prompt <span>→</span> Canva AI</div>
-    <div class="mini-score"><b id="qualityScore">0</b><span>/100</span></div>
-    <small>Prompt Quality Score</small>
+  <div class="doctor-card">
+    <div class="doctor-title">SAILOM WORKSHEET DOCTOR</div>
+    <div class="score"><b id="doctorScore">0</b><span>/100</span></div>
+    <strong id="doctorHeadline">รอข้อมูลใบงาน</strong>
+    <div class="meter"><i id="doctorMeter"></i></div>
+    <small id="doctorSummary">ระบบจะตรวจความเหมาะสมกับวัย ตัวชี้วัด เวลา และ A4</small>
   </div>
 </section>
 
 <main class="shell">
-<section class="card">
-  <div class="section-head"><span>1</span><div><h2>ข้อมูลใบงาน</h2><p>ใช้ข้อมูลตัวอย่าง หรือกรอกข้อมูลของครูเอง</p></div></div>
-  <div class="grid two">
-    <label><b>ระดับชั้น</b><select id="grade"><option>ป.1</option><option>ป.2</option><option>ป.3</option><option selected>ป.4</option><option>ป.5</option><option>ป.6</option></select></label>
-    <label><b>วิชา</b><select id="subject"><option>ภาษาไทย</option><option>คณิตศาสตร์</option><option>วิทยาศาสตร์และเทคโนโลยี</option><option>สังคมศึกษา ศาสนาและวัฒนธรรม</option><option>ภาษาอังกฤษ</option><option>สุขศึกษาและพลศึกษา</option><option>ศิลปะ</option><option>การงานอาชีพ</option></select></label>
-  </div>
-  <label><b>เรื่อง / เนื้อหา</b><input id="topic" value="การอ่านจับใจความจากเรื่องสั้น" placeholder="เช่น ระบบสุริยะ / คำควบกล้ำ / เศษส่วน"></label>
-  <label><b>ตัวชี้วัด / ผลลัพธ์การเรียนรู้</b><textarea id="indicator" rows="3">ท 1.1 ป.4/3 อ่านเรื่องสั้น ๆ ตามเวลาที่กำหนดและตอบคำถามจากเรื่องที่อ่าน</textarea></label>
-  <div class="hint">💡 เวอร์ชันทดลองอนุญาตให้พิมพ์/วางตัวชี้วัดเอง เพื่อทดสอบคุณภาพ Prompt ก่อนฐานหลักสูตรเต็ม</div>
+<section class="mode-grid">
+  <button class="mode-card active" data-mode="quick"><span>⚡</span><b>ให้ SAILOM คิดให้</b><small>กรอกน้อยที่สุด ระบบเลือกให้ทั้งหมด</small></button>
+  <button class="mode-card" data-mode="custom"><span>🎨</span><b>ออกแบบเอง</b><small>เลือกกิจกรรม ดีไซน์ และจำนวนข้อเอง</small></button>
+  <button class="mode-card" data-mode="history"><span>🏛️</span><b>ประวัติศาสตร์</b><small>Timeline • บุคคล • หลักฐาน • เหตุ–ผล</small></button>
+  <button class="mode-card" data-mode="advanced"><span>⚙️</span><b>ขั้นสูง</b><small>A/B/C • QR • Rubric • Local Context</small></button>
 </section>
 
-<section class="card">
-  <div class="section-head"><span>2</span><div><h2>รูปแบบใบงาน</h2><p>Smart Mode จะเลือกกิจกรรมจากคำกริยาในตัวชี้วัดให้</p></div></div>
-  <div class="toolbar">
-    <label class="switchline"><input type="checkbox" id="smart" checked><span></span><b>Smart Mode</b></label>
-    <label><b>เวลา</b><select id="duration"><option>15 นาที</option><option selected>20 นาที</option><option>30 นาที</option><option>40 นาที</option></select></label>
-    <label><b>ระดับ</b><select id="difficulty"><option>ง่าย</option><option selected>ปานกลาง</option><option>ท้าทาย</option></select></label>
+<section class="card" id="step1">
+  <div class="section-head"><span>1</span><div><h2>ข้อมูลการเรียนรู้</h2><p>เป็นข้อมูลหลักที่ใช้ร่วมกันทุกโหมด</p></div></div>
+  <div class="grid three">
+    <label><b>ระดับชั้น</b><select id="grade">
+      <option>ป.1</option><option>ป.2</option><option>ป.3</option><option selected>ป.4</option><option>ป.5</option><option>ป.6</option>
+    </select></label>
+    <label><b>วิชา</b><select id="subject">
+      <option>ภาษาไทย</option><option>คณิตศาสตร์</option><option>วิทยาศาสตร์และเทคโนโลยี</option>
+      <option>สังคมศึกษา ศาสนาและวัฒนธรรม</option><option selected>ประวัติศาสตร์</option>
+      <option>ภาษาอังกฤษ</option><option>สุขศึกษาและพลศึกษา</option><option>ศิลปะ</option><option>การงานอาชีพ</option>
+      <option>รายวิชาเพิ่มเติม / กำหนดเอง</option>
+    </select></label>
+    <label><b>ใช้ใบงานเพื่อ</b><select id="purpose">
+      <option>ก่อนเรียน</option><option>ระหว่างเรียน</option><option selected>หลังเรียน</option>
+      <option>ทบทวน</option><option>ซ่อมเสริม</option><option>การบ้าน</option><option>ประเมิน</option>
+    </select></label>
   </div>
-  <div id="analysisBox" class="analysis"></div>
-  <div id="capacityWarning" class="hint"></div>
-  <div class="activities" id="activities">
-    <label><input type="checkbox" value="จับคู่"><span>🔗</span><b>จับคู่</b></label>
-    <label><input type="checkbox" value="เติมคำ"><span>✍️</span><b>เติมคำ</b></label>
-    <label><input type="checkbox" value="เลือกตอบ"><span>✅</span><b>เลือกตอบ</b></label>
-    <label><input type="checkbox" value="จัดหมวดหมู่"><span>🧩</span><b>จัดหมวดหมู่</b></label>
-    <label><input type="checkbox" value="วิเคราะห์ภาพ"><span>🖼️</span><b>วิเคราะห์ภาพ</b></label>
-    <label><input type="checkbox" value="ตอบคำถามสั้น"><span>💬</span><b>ตอบสั้น</b></label>
-    <label><input type="checkbox" value="เรียงลำดับ"><span>🔢</span><b>เรียงลำดับ</b></label>
-    <label><input type="checkbox" value="สถานการณ์"><span>💡</span><b>สถานการณ์</b></label>
+  <label><b>เรื่อง / เนื้อหา</b><input id="topic" value="อาณาจักรอยุธยา" placeholder="เช่น ระบบสุริยะ / เศษส่วน / กรุงศรีอยุธยา"></label>
+  <label><b>ตัวชี้วัด / ผลลัพธ์การเรียนรู้</b><textarea id="indicator" rows="3" placeholder="วางตัวชี้วัด หรือเขียนสิ่งที่อยากให้นักเรียนทำได้">อธิบายพัฒนาการของอาณาจักรอยุธยาและยกตัวอย่างปัจจัยที่ส่งผลต่อความเจริญรุ่งเรือง</textarea></label>
+  <div class="grid three topgap">
+    <label><b>เวลาทำ</b><select id="duration"><option>15 นาที</option><option selected>20 นาที</option><option>30 นาที</option><option>40 นาที</option><option>50 นาที</option></select></label>
+    <label><b>ความยาก</b><select id="difficulty"><option>ง่าย</option><option selected>ปานกลาง</option><option>ท้าทาย</option></select></label>
+    <label><b>จำนวนนักเรียนโดยประมาณ</b><select id="classSize"><option>ไม่ระบุ</option><option>น้อยกว่า 20 คน</option><option selected>20–30 คน</option><option>31–40 คน</option><option>มากกว่า 40 คน</option></select></label>
   </div>
+</section>
+
+<section class="card mode-panel" data-panel="quick">
+  <div class="section-head"><span>2</span><div><h2>โหมดเร็ว — ให้ SAILOM คิดให้</h2><p>ระบบจะเลือกกิจกรรม จำนวนข้อ ดีไซน์ และความหนาแน่นให้อัตโนมัติ</p></div></div>
+  <div class="quick-box">
+    <div class="quick-icon">✨</div>
+    <div><b>Auto Worksheet Plan</b><p id="quickPlan">ระบบกำลังวิเคราะห์ข้อมูลของคุณ...</p></div>
+    <button id="autoPlanBtn" class="primary">วิเคราะห์ใหม่</button>
+  </div>
+</section>
+
+<section class="card mode-panel hidden" data-panel="custom">
+  <div class="section-head"><span>2</span><div><h2>โหมดออกแบบเอง</h2><p>ครูเลือกกิจกรรมและจำนวนข้อได้ละเอียด</p></div></div>
+  <div class="activities" id="activityGrid"></div>
   <div class="grid three topgap">
     <label><b>จำนวนกิจกรรม</b><select id="activityCount"><option>1</option><option selected>2</option><option>3</option></select></label>
-    <label><b>จำนวนข้อ</b><select id="questionCount"><option>5</option><option selected>8</option><option>10</option></select></label>
-    <label><b>กระดาษ</b><select id="orientation"><option>A4 แนวตั้ง</option><option>A4 แนวนอน</option></select></label>
+    <label><b>จำนวนข้อรวม</b><select id="questionCount"><option>4</option><option>5</option><option selected>8</option><option>10</option><option>12</option></select></label>
+    <label><b>เรียงความยาก</b><select id="progression"><option>ระดับเดียวกัน</option><option selected>ง่าย → เข้าใจ → ประยุกต์</option><option>ง่าย → ท้าทาย</option></select></label>
+  </div>
+</section>
+
+<section class="card mode-panel hidden" data-panel="history">
+  <div class="section-head"><span>2</span><div><h2>โหมดประวัติศาสตร์</h2><p>กิจกรรมเฉพาะทางเพื่อช่วยให้เด็ก “คิดแบบนักประวัติศาสตร์”</p></div></div>
+  <div class="history-tools">
+    <label><input type="radio" name="historyType" value="Timeline" checked><span>🕰️</span><b>Timeline</b><small>เรียงเหตุการณ์ตามเวลา</small></label>
+    <label><input type="radio" name="historyType" value="บุคคลสำคัญ"><span>👑</span><b>บุคคลสำคัญ</b><small>บทบาทและผลงาน</small></label>
+    <label><input type="radio" name="historyType" value="หลักฐานทางประวัติศาสตร์"><span>🏺</span><b>หลักฐาน</b><small>ชั้นต้น/ชั้นรอง</small></label>
+    <label><input type="radio" name="historyType" value="เหตุและผล"><span>🔄</span><b>เหตุ–ผล</b><small>วิเคราะห์สาเหตุและผลลัพธ์</small></label>
+    <label><input type="radio" name="historyType" value="แผนที่ประวัติศาสตร์"><span>🗺️</span><b>แผนที่</b><small>พื้นที่และการเปลี่ยนแปลง</small></label>
+    <label><input type="radio" name="historyType" value="อดีตเทียบปัจจุบัน"><span>⚖️</span><b>อดีต–ปัจจุบัน</b><small>เปรียบเทียบความเปลี่ยนแปลง</small></label>
+  </div>
+</section>
+
+<section class="card mode-panel hidden" data-panel="advanced">
+  <div class="section-head"><span>2</span><div><h2>โหมดขั้นสูง</h2><p>เพิ่มความสามารถเฉพาะสำหรับใบงานที่ต้องการมากกว่าปกติ</p></div></div>
+  <div class="advanced-grid">
+    <label><input id="variantABC" type="checkbox"> <b>สร้างชุด A / B / C</b><small>โจทย์ต่างกัน แต่ยากใกล้เคียงกัน</small></label>
+    <label><input id="useRubric" type="checkbox"> <b>เพิ่ม Rubric</b><small>เหมาะกับข้อเขียน/ชิ้นงาน</small></label>
+    <label><input id="useQR" type="checkbox"> <b>เว้นช่อง QR Code</b><small>สำหรับวิดีโอ เกม หรือแบบทดสอบ</small></label>
+    <label><input id="localContext" type="checkbox"> <b>เชื่อมบริบทท้องถิ่น</b><small>ใช้ชุมชน/จังหวัดเป็นส่วนหนึ่งของโจทย์</small></label>
+    <label><input id="imagePrompt" type="checkbox" checked> <b>สร้าง Prompt ภาพประกอบ</b><small>ใช้ต่อกับ Canva หรือ Image AI</small></label>
+    <label><input id="teacherKey" type="checkbox" checked> <b>สร้างเฉลยแยกสำหรับครู</b><small>ไม่ใส่เฉลยลงหน้าเด็ก</small></label>
+  </div>
+  <div class="grid two topgap">
+    <label><b>บริบทท้องถิ่น (ถ้าใช้)</b><input id="localText" placeholder="เช่น จังหวัดพระนครศรีอยุธยา / ชุมชนรอบโรงเรียน"></label>
+    <label><b>ลิงก์สำหรับ QR (ถ้ามี)</b><input id="qrUrl" placeholder="https://..."></label>
   </div>
 </section>
 
 <section class="card">
-  <div class="section-head"><span>3</span><div><h2>ดีไซน์</h2><p>เลือกรูปแบบที่ต้องการให้ Canva AI สร้าง</p></div></div>
-  <div class="styles">
-    <label><input type="radio" name="style" value="Cute Kids" checked><div>🌈</div><b>Cute Kids</b></label>
-    <label><input type="radio" name="style" value="Modern Education"><div>📘</div><b>Modern</b></label>
-    <label><input type="radio" name="style" value="Thai Cute"><div>🐘</div><b>Thai Cute</b></label>
-    <label><input type="radio" name="style" value="AI Future"><div>🤖</div><b>AI Future</b></label>
-    <label><input type="radio" name="style" value="Nature Learning"><div>🌿</div><b>Nature</b></label>
-    <label><input type="radio" name="style" value="Minimal Colorful"><div>✨</div><b>Minimal</b></label>
+  <div class="section-head"><span>3</span><div><h2>หน้าตาใบงาน</h2><p>เลือกภาพรวม หรือให้ SAILOM เลือกอัตโนมัติ</p></div></div>
+  <div class="styles" id="styleGrid">
+    <label><input type="radio" name="style" value="Cute Kids" checked><div>🌈</div><b>Cute Kids</b><small>สดใส น่ารัก</small></label>
+    <label><input type="radio" name="style" value="Modern Education"><div>📘</div><b>Modern</b><small>มืออาชีพ</small></label>
+    <label><input type="radio" name="style" value="Thai Heritage"><div>🏛️</div><b>Thai Heritage</b><small>เหมาะประวัติศาสตร์</small></label>
+    <label><input type="radio" name="style" value="AI Future"><div>🤖</div><b>AI Future</b><small>ดิจิทัล</small></label>
+    <label><input type="radio" name="style" value="Nature Learning"><div>🌿</div><b>Nature</b><small>สบายตา</small></label>
+    <label><input type="radio" name="style" value="Minimal Colorful"><div>✨</div><b>Minimal</b><small>อ่านง่าย</small></label>
   </div>
-  <div class="grid two topgap">
-    <label><b>โทนสี</b><select id="color"><option selected>พาสเทลสดใส</option><option>ฟ้า–น้ำเงิน–ขาว</option><option>เขียว–ครีม</option><option>ชมพู–ม่วง</option><option>ขาวดำ ประหยัดหมึก</option></select></label>
+  <div class="grid three topgap">
+    <label><b>โทนสี</b><select id="color"><option>พาสเทลสดใส</option><option selected>ฟ้า–น้ำเงิน–ขาว</option><option>น้ำตาล–ทอง–ครีม</option><option>เขียว–ครีม</option><option>ชมพู–ม่วง</option><option>ขาวดำ ประหยัดหมึก</option></select></label>
+    <label><b>กระดาษ</b><select id="orientation"><option selected>A4 แนวตั้ง</option><option>A4 แนวนอน</option></select></label>
     <label><b>ความหนาแน่น</b><select id="density"><option>โปร่ง อ่านง่าย</option><option selected>สมดุล</option><option>เนื้อหาแน่นแต่ยังอ่านง่าย</option></select></label>
   </div>
   <div class="checks">
     <label><input id="nameField" type="checkbox" checked> ชื่อ–ชั้น–เลขที่</label>
     <label><input id="scoreField" type="checkbox" checked> ช่องคะแนน</label>
-    <label><input id="instructionField" type="checkbox" checked> คำชี้แจง</label>
-    <label><input id="onePage" type="checkbox" checked> บังคับ A4 หน้าเดียว</label>
-    <label><input id="answerKey" type="checkbox"> เฉลยใน Prompt หลัก</label>
-    <label><input id="teacherKey" type="checkbox" checked> สร้าง Prompt เฉลยแยกสำหรับครู</label>
-  </div>
-</section>
-
-<section class="card result-card">
-  <div class="section-head"><span>4</span><div><h2>Prompt พร้อมใช้</h2><p>กดสร้าง แล้วคัดลอกไปวางใน Canva AI</p></div></div>
-  <div class="platforms">
-    <button class="platform active" data-platform="canva">🎨 Canva AI</button>
-    <button class="platform" data-platform="chatgpt">✦ ChatGPT</button>
-    <button class="platform" data-platform="gemini">◆ Gemini</button>
-  </div>
-  <div class="buttons">
-    <button id="generateBtn" class="primary big">✨ สร้าง Prompt พร้อมใช้</button>
-    <button id="altBtn" class="secondary big">🎲 สร้างอีกแบบ</button>
-    <button id="saveBtn" class="secondary big">💾 บันทึกงานนี้</button>
-  </div>
-
-  <div class="quality-panel">
-    <div><b>ตรวจ Prompt ก่อนใช้งาน</b><span id="qualityText">ยังไม่ได้สร้าง</span></div>
-    <ul id="qualityList"></ul>
-  </div>
-
-  <textarea id="output" rows="28" spellcheck="false"></textarea>
-  <div class="buttons smallbtns">
-    <button id="copyBtn" class="secondary">📋 คัดลอก Prompt</button>
-    <button id="downloadBtn" class="secondary">⬇️ ดาวน์โหลด TXT</button>
-    <button id="exportBtn" class="secondary">📦 Export งาน JSON</button>
-  </div>
-  <div id="teacherKeyWrap" class="output-block">
-    <h3>Prompt เฉลยสำหรับครู</h3>
-    <textarea id="keyOutput" rows="12" spellcheck="false"></textarea>
-    <div class="buttons smallbtns"><button id="copyKeyBtn" class="secondary">📋 คัดลอก Prompt เฉลย</button></div>
+    <label><input id="instructions" type="checkbox" checked> คำชี้แจง</label>
+    <label><input id="onePage" type="checkbox" checked> A4 หน้าเดียว</label>
+    <label><input id="inkSave" type="checkbox"> ประหยัดหมึก</label>
   </div>
 </section>
 
 <section class="card">
-  <div class="section-head"><span>5</span><div><h2>ตัวอย่าง Blueprint</h2><p>ดูว่าระบบวางโครงใบงาน A4 ประมาณไหนก่อนส่งไป Canva</p></div></div>
-  <div id="paper" class="paper"></div>
+  <div class="section-head"><span>4</span><div><h2>Worksheet Doctor</h2><p>ตรวจความพร้อมก่อนสร้าง Prompt</p></div></div>
+  <div class="doctor-grid" id="doctorChecks"></div>
+  <div id="doctorAdvice" class="advice"></div>
 </section>
 
-<section class="card test-guide">
-  <h2>🧪 วิธีทดสอบกับ Canva AI</h2>
-  <ol>
-    <li>กด <b>“ทดลองด้วยข้อมูลตัวอย่าง”</b></li>
-    <li>กด <b>“สร้าง Prompt พร้อมใช้”</b></li>
-    <li>กด <b>“คัดลอก Prompt”</b></li>
-    <li>เปิด Canva AI / Magic Design / Canva Chat แล้ววาง Prompt</li>
-    <li>ดูว่าได้ใบงาน A4 หน้าเดียวที่มีโจทย์ พื้นที่ตอบ และดีไซน์ตามที่สั่งหรือไม่</li>
-  </ol>
-  <div class="test-note">ถ้า Canva สร้างออกมาไม่ตรง เราจะปรับ “Prompt Engine” ก่อนเติมฐานหลักสูตรเต็ม เพราะนี่คือหัวใจของระบบครับ</div>
+<section class="card result-card">
+  <div class="section-head"><span>5</span><div><h2>Prompt พร้อมใช้</h2><p>สร้าง Prompt สำหรับ AI ที่ต้องการ</p></div></div>
+  <div class="result-toolbar">
+    <div class="platforms">
+      <button class="platform active" data-platform="canva">🎨 Canva AI</button>
+      <button class="platform" data-platform="chatgpt">✦ ChatGPT</button>
+      <button class="platform" data-platform="gemini">◆ Gemini</button>
+    </div>
+    <div class="buttons">
+      <button id="generateBtn" class="primary big">✨ สร้าง Prompt</button>
+      <button id="saveBtn" class="secondary big">💾 บันทึกงาน</button>
+    </div>
+  </div>
+
+  <div class="output-block">
+    <div class="output-title"><b>Prompt สร้างใบงาน</b><button id="copyMain">📋 คัดลอก</button></div>
+    <textarea id="mainPrompt" rows="26" spellcheck="false"></textarea>
+  </div>
+
+  <div class="output-block" id="keyBlock">
+    <div class="output-title"><b>Prompt เฉลยสำหรับครู</b><button id="copyKey">📋 คัดลอก</button></div>
+    <textarea id="keyPrompt" rows="12" spellcheck="false"></textarea>
+  </div>
+
+  <div class="output-block" id="imageBlock">
+    <div class="output-title"><b>Prompt ภาพประกอบ</b><button id="copyImage">📋 คัดลอก</button></div>
+    <textarea id="imagePromptOut" rows="10" spellcheck="false"></textarea>
+  </div>
+</section>
+
+<section class="card">
+  <div class="section-head"><span>6</span><div><h2>A4 Blueprint</h2><p>ตัวอย่างโครงหน้าโดยประมาณก่อนนำไปเจน</p></div></div>
+  <div id="paper" class="paper"></div>
 </section>
 </main>
 
-<div id="savedPanel" class="saved-panel"><div class="saved-head"><h3>💾 งานที่บันทึก</h3><button id="closeSaved">✕</button></div><div id="savedList"></div></div>
-<div id="savedBack" class="saved-back"></div>
-<div id="toast" class="toast">คัดลอกแล้ว</div>
-<footer><div class="shell footer"><div><b>SAILOM ใบงาน AI</b><small>#ห้องเรียนครูชัช</small></div><span>V2.3 Pilot Complete • GitHub Pages Ready</span></div></footer>
+<div id="drawerBack" class="backdrop"></div>
+<aside id="drawer" class="drawer">
+  <div class="drawer-head"><h3>💾 งานของฉัน</h3><button id="closeDrawer">✕</button></div>
+  <div id="savedList"></div>
+</aside>
+
+<div id="toast" class="toast">สำเร็จ</div>
+<footer>
+  <div class="shell footer">
+    <div class="footer-brand"><img src="sailom-logo.png" alt="SAILOM"><div><b>SAILOM</b><small>#ห้องเรียนครูชัช</small></div></div>
+    <div class="footer-meta"><span>SAILOM ใบงาน AI V3.0</span><div class="counter">👁 ผู้เข้าชม <b id="visitorCountFooter">—</b> ครั้ง</div></div>
+  </div>
+</footer>
+
+<script src="counter-config.js"></script>
+<script src="visitor-counter.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

@@ -1,21 +1,31 @@
-# SAILOM ใบงาน AI V2.3 — Pilot Complete
+# SAILOM ใบงาน AI V3.0
 
-เวอร์ชันทดลองใช้งานจริงก่อนเชื่อมฐานหลักสูตรเต็ม
+แพลตฟอร์มช่วยครูออกแบบใบงาน A4 ด้วย AI
 
-เพิ่มจาก V2.2:
-- ตรวจความเสี่ยงล้น A4 ตามชั้น/เวลา/จำนวนข้อ/กิจกรรม
-- Prompt เฉลยสำหรับครูแยกจากใบงานนักเรียน
-- บันทึกงานใน LocalStorage
-- เปิดงานเก่า / คัดลอก / ลบ
-- Export งานเป็น JSON
-- Quality Score เพิ่มเงื่อนไขความพอดี A4
-- Canva AI / ChatGPT / Gemini + Smart Engine + Blueprint
+## โหมดหลัก
+1. ให้ SAILOM คิดให้
+2. ออกแบบเอง
+3. ประวัติศาสตร์
+4. ขั้นสูง
 
-วิธีทดลอง:
-1. เปิดผ่าน GitHub Pages หรือ Live Server
-2. กดทดลองตัวอย่าง
-3. สร้าง Prompt
-4. คัดลอกไป Canva AI
-5. ตรวจผลจริง แล้วค่อยปรับ Prompt Engine ก่อนเชื่อมฐานหลักสูตรเต็ม
+## ฟีเจอร์
+- Smart Worksheet Engine
+- Worksheet Doctor
+- Age-based design
+- A4 Fit
+- ประวัติศาสตร์: Timeline / บุคคล / หลักฐาน / เหตุ–ผล / แผนที่ / อดีต–ปัจจุบัน
+- A/B/C
+- Rubric
+- QR placeholder
+- Local Context
+- Prompt ภาพประกอบ
+- Prompt เฉลยครู
+- บันทึกงาน LocalStorage
+- Page View Counter
+- โลโก้ SAILOM + #ห้องเรียนครูชัช
 
-เครดิต: SAILOM ใบงาน AI — #ห้องเรียนครูชัช
+## ตัวนับผู้เข้าชม
+ใส่ Google Apps Script URL ใน `counter-config.js`
+
+## Deploy
+GitHub Pages ได้ทันที
