@@ -51,6 +51,21 @@ function clearForm(){
   $("#qualityList").innerHTML="";
   renderPaper();
 }
+
+function updateCapacity(){
+  const q=Number($("#questionCount").value), a=Number($("#activityCount").value), g=$("#grade").value, mins=parseInt($("#duration").value);
+  const maxQ={"ป.1":6,"ป.2":7,"ป.3":8,"ป.4":9,"ป.5":10,"ป.6":10}[g]||8;
+  let risk=0;if(q>maxQ)risk+=2;if(a>=3)risk++;if(mins<=15&&q>=8)risk+=2;
+  const box=$("#capacityWarning");
+  if(risk===0)box.innerHTML=`✅ <b>A4 น่าจะพอดี</b> — ${q} ข้อ / ${a} กิจกรรม สำหรับ ${g}`;
+  else if(risk<=2)box.innerHTML=`⚠️ <b>ค่อนข้างแน่น</b> — หาก Canva จัดหน้าแน่น แนะนำลดข้อหรือกิจกรรม`;
+  else box.innerHTML=`⛔ <b>เสี่ยงล้น A4</b> — ควรลดจำนวนข้อ/กิจกรรมก่อนเจน`;
+  return risk;
+}
+function teacherKeyPrompt(){
+  return `สร้างเฉลยสำหรับครูของใบงานต่อไปนี้ โดยไม่ใส่เฉลยลงในหน้าใบงานนักเรียน\n\nระดับชั้น: ${$("#grade").value}\nวิชา: ${$("#subject").value}\nเรื่อง: ${$("#topic").value}\nตัวชี้วัด/ผลลัพธ์การเรียนรู้: ${$("#indicator").value}\nรูปแบบกิจกรรม: ${selectedActs().join(" + ")}\nจำนวนข้อประมาณ: ${$("#questionCount").value}\n\nให้ตอบ:\n1. เฉลยทีละข้อแบบกระชับ\n2. ข้อเขียนให้ระบุแนวคำตอบที่ยอมรับได้\n3. ถ้าตอบได้หลายแบบ ให้ระบุเกณฑ์ตรวจ\n4. ตรวจว่าเฉลยสอดคล้องตัวชี้วัดและระดับชั้น\n5. หากโจทย์ใดกำกวม ให้แจ้งครูว่าควรแก้อย่างไร`;
+}
+
 function makePrompt(){
   if($("#smart").checked) analyze();
   const acts=selectedActs();
@@ -130,7 +145,8 @@ function qualityCheck(prompt){
     ["กำหนดกิจกรรม",selectedActs().length>0],
     ["มีข้อกำหนดหน้าเดียว",!$("#onePage").checked || prompt.includes("ห้ามล้น")],
     ["มีข้อกำหนดภาษาเหมาะกับวัย",prompt.includes("ภาษาเหมาะกับนักเรียน")],
-    ["มีคำสั่งให้ตรวจความถูกต้อง",prompt.includes("ตรวจคำสะกด")]
+    ["มีคำสั่งให้ตรวจความถูกต้อง",prompt.includes("ตรวจคำสะกด")],
+    ["ความหนาแน่น A4 อยู่ในเกณฑ์",updateCapacity()<3]
   ];
   const score=Math.round(checks.filter(x=>x[1]).length/checks.length*100);
   $("#qualityScore").textContent=score;
@@ -140,6 +156,9 @@ function qualityCheck(prompt){
 function generate(){
   const p=makePrompt();
   $("#output").value=p;
+  $("#teacherKeyWrap").style.display=$("#teacherKey").checked?"block":"none";
+  $("#keyOutput").value=$("#teacherKey").checked?teacherKeyPrompt():"";
+  updateCapacity();
   qualityCheck(p);
   renderPaper();
   toast("สร้าง Prompt แล้ว");
@@ -169,3 +188,12 @@ $("#indicator").addEventListener("input",analyze);$("#smart").onchange=analyze;$
 $$("#activities input,input[name=style]").forEach(x=>x.onchange=renderPaper);
 $$(".platform").forEach(b=>b.onclick=()=>{$$(".platform").forEach(x=>x.classList.remove("active"));b.classList.add("active");platform=b.dataset.platform;generate();});
 demo();
+
+function projectSnapshot(){return {id:Date.now(),name:`${$("#grade").value} ${$("#subject").value} — ${$("#topic").value||"ไม่มีชื่อ"}`,savedAt:new Date().toLocaleString("th-TH"),fields:{grade:$("#grade").value,subject:$("#subject").value,topic:$("#topic").value,indicator:$("#indicator").value,duration:$("#duration").value,difficulty:$("#difficulty").value,activityCount:$("#activityCount").value,questionCount:$("#questionCount").value,orientation:$("#orientation").value,color:$("#color").value,density:$("#density").value},smart:$("#smart").checked,activities:selectedActs(),style:$('input[name="style"]:checked')?.value||"Cute Kids",teacherKey:$("#teacherKey").checked,output:$("#output").value,keyOutput:$("#keyOutput").value}}
+function saveProject(){const list=JSON.parse(localStorage.getItem("sailomSavedProjects")||"[]");list.unshift(projectSnapshot());localStorage.setItem("sailomSavedProjects",JSON.stringify(list.slice(0,20)));updateSavedCount();showToast("บันทึกงานแล้ว")}
+function updateSavedCount(){const e=$("#savedCount");if(e)e.textContent=JSON.parse(localStorage.getItem("sailomSavedProjects")||"[]").length}
+function openSaved(){const list=JSON.parse(localStorage.getItem("sailomSavedProjects")||"[]");$("#savedList").innerHTML=list.length?list.map((x,i)=>`<div class="saved-item"><b>${escapeHtml(x.name)}</b><small>${escapeHtml(x.savedAt)}</small><div class="saved-actions"><button data-load="${i}">เปิด</button><button data-copy="${i}">คัดลอก</button><button data-del="${i}">ลบ</button></div></div>`).join(""):`<p style="color:#718396">ยังไม่มีงานที่บันทึก</p>`;$("#savedPanel").classList.add("show");$("#savedBack").classList.add("show");$$("#savedList [data-load]").forEach(b=>b.onclick=()=>loadSaved(list[+b.dataset.load]));$$("#savedList [data-copy]").forEach(b=>b.onclick=async()=>{await navigator.clipboard.writeText(list[+b.dataset.copy].output||"");showToast("คัดลอก Prompt แล้ว")});$$("#savedList [data-del]").forEach(b=>b.onclick=()=>{list.splice(+b.dataset.del,1);localStorage.setItem("sailomSavedProjects",JSON.stringify(list));updateSavedCount();openSaved()})}
+function closeSaved(){$("#savedPanel").classList.remove("show");$("#savedBack").classList.remove("show")}
+function loadSaved(x){Object.entries(x.fields||{}).forEach(([id,val])=>{const e=$("#"+id);if(e)e.value=val});$("#smart").checked=x.smart;$$("#activities input").forEach(cb=>cb.checked=(x.activities||[]).includes(cb.value));const r=$(`input[name="style"][value="${x.style}"]`);if(r)r.checked=true;$("#teacherKey").checked=x.teacherKey!==false;$("#output").value=x.output||"";$("#keyOutput").value=x.keyOutput||"";analyze();renderPaper();if(x.output)qualityCheck(x.output);closeSaved();showToast("เปิดงานแล้ว")}
+function exportProject(){const blob=new Blob([JSON.stringify(projectSnapshot(),null,2)],{type:"application/json;charset=utf-8"});const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="SAILOM-Worksheet-Project.json";a.click();URL.revokeObjectURL(url)}
+$("#saveBtn").onclick=saveProject;$("#savedBtn").onclick=openSaved;$("#closeSaved").onclick=closeSaved;$("#savedBack").onclick=closeSaved;$("#copyKeyBtn").onclick=async()=>{if(!$("#keyOutput").value)generate();await navigator.clipboard.writeText($("#keyOutput").value);showToast("คัดลอก Prompt เฉลยแล้ว")};$("#exportBtn").onclick=exportProject;$("#teacherKey").onchange=generate;["questionCount","activityCount","duration","grade"].forEach(id=>$("#"+id).addEventListener("change",updateCapacity));updateSavedCount();updateCapacity();

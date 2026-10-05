@@ -17,12 +17,13 @@
 
 <section class="hero shell">
   <div>
-    <span class="pill">DEMO V2.2</span>
+    <span class="pill">V2.3 • PILOT COMPLETE</span>
     <h1>สร้าง Prompt ใบงาน<br><em>พร้อมเอาไปใช้กับ Canva AI</em></h1>
     <p>เป้าหมายของเวอร์ชันนี้คือพิสูจน์ว่า “กดไม่กี่ครั้งแล้วได้ Prompt ที่สร้างใบงาน A4 หน้าเดียวได้จริง”</p>
     <div class="hero-actions">
       <button id="demoBtn" class="primary big">⚡ ทดลองด้วยข้อมูลตัวอย่าง</button>
       <button id="clearBtn" class="secondary big">เริ่มกรอกเอง</button>
+      <button id="savedBtn" class="secondary big">💾 งานที่บันทึก (<span id="savedCount">0</span>)</button>
     </div>
   </div>
   <div class="hero-card">
@@ -53,6 +54,7 @@
     <label><b>ระดับ</b><select id="difficulty"><option>ง่าย</option><option selected>ปานกลาง</option><option>ท้าทาย</option></select></label>
   </div>
   <div id="analysisBox" class="analysis"></div>
+  <div id="capacityWarning" class="hint"></div>
   <div class="activities" id="activities">
     <label><input type="checkbox" value="จับคู่"><span>🔗</span><b>จับคู่</b></label>
     <label><input type="checkbox" value="เติมคำ"><span>✍️</span><b>เติมคำ</b></label>
@@ -89,7 +91,8 @@
     <label><input id="scoreField" type="checkbox" checked> ช่องคะแนน</label>
     <label><input id="instructionField" type="checkbox" checked> คำชี้แจง</label>
     <label><input id="onePage" type="checkbox" checked> บังคับ A4 หน้าเดียว</label>
-    <label><input id="answerKey" type="checkbox"> เฉลย</label>
+    <label><input id="answerKey" type="checkbox"> เฉลยใน Prompt หลัก</label>
+    <label><input id="teacherKey" type="checkbox" checked> สร้าง Prompt เฉลยแยกสำหรับครู</label>
   </div>
 </section>
 
@@ -103,6 +106,7 @@
   <div class="buttons">
     <button id="generateBtn" class="primary big">✨ สร้าง Prompt พร้อมใช้</button>
     <button id="altBtn" class="secondary big">🎲 สร้างอีกแบบ</button>
+    <button id="saveBtn" class="secondary big">💾 บันทึกงานนี้</button>
   </div>
 
   <div class="quality-panel">
@@ -114,6 +118,12 @@
   <div class="buttons smallbtns">
     <button id="copyBtn" class="secondary">📋 คัดลอก Prompt</button>
     <button id="downloadBtn" class="secondary">⬇️ ดาวน์โหลด TXT</button>
+    <button id="exportBtn" class="secondary">📦 Export งาน JSON</button>
+  </div>
+  <div id="teacherKeyWrap" class="output-block">
+    <h3>Prompt เฉลยสำหรับครู</h3>
+    <textarea id="keyOutput" rows="12" spellcheck="false"></textarea>
+    <div class="buttons smallbtns"><button id="copyKeyBtn" class="secondary">📋 คัดลอก Prompt เฉลย</button></div>
   </div>
 </section>
 
@@ -135,8 +145,10 @@
 </section>
 </main>
 
+<div id="savedPanel" class="saved-panel"><div class="saved-head"><h3>💾 งานที่บันทึก</h3><button id="closeSaved">✕</button></div><div id="savedList"></div></div>
+<div id="savedBack" class="saved-back"></div>
 <div id="toast" class="toast">คัดลอกแล้ว</div>
-<footer><div class="shell footer"><div><b>SAILOM ใบงาน AI</b><small>#ห้องเรียนครูชัช</small></div><span>Demo V2.2 • GitHub Pages Ready</span></div></footer>
+<footer><div class="shell footer"><div><b>SAILOM ใบงาน AI</b><small>#ห้องเรียนครูชัช</small></div><span>V2.3 Pilot Complete • GitHub Pages Ready</span></div></footer>
 <script src="script.js"></script>
 </body>
 </html>
